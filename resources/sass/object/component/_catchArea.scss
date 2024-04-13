@@ -1,0 +1,14 @@
+@use "../../global" as g;
+
+.c-catchArea{
+	margin-bottom: g.$space_xl;
+	&__title{
+		margin-bottom: g.$space_l;
+		font-weight: bold;
+		font-size: g.$font-size_l;
+		color: g.$color-accent;
+	}
+	&__text{
+		font-size: g.$font-size_s;
+	}
+}

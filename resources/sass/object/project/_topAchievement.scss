@@ -1,0 +1,118 @@
+@use "../../global" as g;
+
+.p-topAchievement{
+	&__container{
+		width: 800px;
+		margin: 0 auto;
+		@include g.mq(lg) {
+			width: 90%;
+		}
+		@include g.mq(md) {
+			width: 100%;
+		}
+	}
+	&__titleArea{
+	}
+	&__titleText{
+		display: inline-block;
+		border-bottom: 3px dotted #333;
+		@include g.mq(md) {
+			// line-height: 1.8;
+		}
+		@include g.mq() {
+			font-size: g.$font-size_xl;
+		}
+	}
+	&__maker{
+		display: inline-block;
+		margin: 0 g.$space_s;
+		font-size: 2.5rem;
+		color: g.$color-accent;
+		@include g.mq() {
+			font-size: g.$font-size_xxl;
+		}
+	}
+	&__cards{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-auto-rows: minmax(100px, auto);
+		column-gap: g.$space_xl;
+		row-gap: g.$space_xl;
+		@include g.mq(md) {
+			gap: g.$space_m;
+		}
+		@include g.mq() {
+			gap: g.$space_s;
+		}
+	}
+	&__card{
+		padding: g.$space_xl;
+		text-align: center;
+		background: g.$color-base;
+		border: 2px solid #333;
+		border-radius: g.$space_m;
+		box-shadow: g.$box-shadow;
+		font-weight: bold;
+		@include g.mq(md) {
+			transform: translateY(200px);
+		}
+		@include g.mq() {
+			padding: g.$space_m;
+		}
+	}
+	&__cardTitle{
+		margin-bottom: g.$space_m;
+		font-size: g.$font-size_ll;
+		@include g.mq(md) {
+			font-size: g.$font-size_l;
+		}
+		@include g.mq() {
+			margin-bottom: 0;
+			font-size: g.$font-size_m;
+		}
+	}
+	&__dataArea{
+		display: inline-block;
+		text-align: center;
+	}
+	&__num{
+		display: inline-block;
+		margin-right: g.$space_s;
+		letter-spacing: 0;
+		font-size: 2.5rem;
+		color: g.$color-main;
+		@include g.mq(md) {
+			font-size: g.$font-size_3l;
+		}
+		@include g.mq() {
+			margin-right: 0;
+			font-size: g.$font-size_xl;
+		}
+	}
+	&__text{
+		position: relative;
+		display: inline-block;
+		font-size: g.$font-size_ll;
+		@include g.mq(md) {
+			font-size: g.$font-size_l;
+		}
+		@include g.mq() {
+			font-size: g.$font-size_m;
+		}
+	}
+	&__attentionNum{
+		margin-top: 0;
+		position: absolute;
+		right: -30px;
+		bottom: 8px;
+		line-height: 1;
+		@include g.mq() {
+			right: -27px;
+			bottom: 3px;
+		}
+	}
+	&__attentionArea{
+		font-size: g.$font-size_s;
+	}
+}

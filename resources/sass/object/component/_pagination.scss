@@ -1,0 +1,26 @@
+@use "../../global" as g;
+
+.c-pagination{
+	display: flex;
+	justify-content: center;
+    border-radius: g.$space_s;
+	&__item{
+		border: 1px solid #cddee8;
+		border-right: none;
+		&:last-child{
+			border-right: 1px solid #cddee8;
+		}
+	}
+	&__link{
+		display: inline-block;
+		height: g.$space_xxl;
+		line-height: g.$space_xxl;
+		padding: 0 g.$space_m;
+		background: #fff;
+		font-size: 12px;
+		color: #444;
+		&:hover{
+			color: g.$color-accent;
+		}
+	}
+}

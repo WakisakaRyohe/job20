@@ -1,0 +1,55 @@
+@use "../global" as g;
+
+.l-footer{
+    display: block;
+    width: 100%;
+	padding: g.$space_xl 0 g.$space_3l;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #efefef;
+	background: g.$color_base;
+	@include g.mq() {
+		padding: g.$space_l 0 g.$space_xxl;
+	}	
+	&__list{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-bottom: g.$space_xl;
+		font-size: g.$font-size_s;
+		@include g.mq() {
+			flex-direction: column;
+			gap: g.$space_s;
+			margin-bottom: g.$space_l;
+		}	
+	}
+	&__listItem{
+		padding: 0 g.$space_m;
+		border-right: 1px solid g.$color_borderSub;
+		&:last-child{
+			border-right: none;
+		}
+		@include g.mq() {
+			border-right: none;
+		}	
+	}
+	&__link{
+		position: relative;
+		padding: g.$space_s 0 g.$space_s g.$space_m;
+		color: g.$color_main;
+		&::before{
+			content: '';
+			display: inline-block;
+			border: 7px solid transparent;
+			border-left: 7px solid g.$color_main;
+			position: absolute;
+			top: 5px;
+			left: 0;
+		}
+	}
+	&__copy{
+		font-size: g.$font-size_ss;
+	}
+}

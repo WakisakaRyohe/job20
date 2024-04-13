@@ -1,0 +1,75 @@
+@use "../../global" as g;
+
+.p-topWorry{
+	padding: 130px g.$space_xl 80px;
+	@include g.mq() {
+		padding: 100px g.$space_xl 80px;
+	}
+	&__maker{
+		display: inline-block;
+		margin: 0 g.$space_s;
+		& > * {
+			position: relative;
+			font-weight: bold;
+			font-size: g.$font-size_3l;
+			color: g.$color-main;
+			&::after{
+				content: '';
+				display: inline-block;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				position: absolute;
+				left: calc(50% - 3px);
+				bottom: -10px;
+				background: g.$color-main;
+			}
+		} 
+	}
+	&__card{
+		width: 33%;
+		@include g.mq(md) {
+			width: 80%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: g.$space_m;	
+		}
+		@include g.mq() {
+			width: 100%;
+		}
+	}
+	&__img{
+		width: 120px;
+		height: 120px;
+		margin: 0 auto g.$space_xl;
+		@include g.mq(md) {
+			width: 100px;
+			height: 100px;	
+			flex: 0 0 100px;
+			margin-bottom: 0;
+		}
+		@include g.mq(md) {
+			width: 80px;
+			height: 80px;	
+			flex: 0 0 80px;
+			margin-bottom: 0;
+		}
+		img{
+			border-radius: 50%;
+			border: 3px solid g.$color-main;
+		}
+	}
+	&__cardText{
+		padding: g.$space_m;
+		margin-bottom: 0;
+		text-align: center;
+		background: g.$color-base;
+		box-shadow: g.$box-shadow;
+		border-radius: g.$space_m;
+		font-size: g.$font-size_s;
+		@include g.mq(md) {
+			flex: 1 1 auto;
+		}
+	}
+}

@@ -1,0 +1,125 @@
+@use "../../global" as g;
+
+.c-pageSet{
+	&__title{
+		position: relative;
+		padding: g.$space_m g.$space_xl g.$space_m g.$space_3l;
+		margin-bottom: g.$space_xl;
+		border-radius: g.$space_s;
+		background: g.$color_main;
+		color: g.$color_base;
+		@include g.mq() {
+			margin-bottom: g.$space_m;
+		}
+		i{
+			display: inline-block;
+			position: absolute;
+			top: 15px;
+			left: 12px;
+			font-size: g.$font-size_l;
+		}
+	}
+	&__titleText{
+		font-size: g.$font-size_l;
+		font-weight: bold;
+	}
+	&__navi{
+		margin-bottom: g.$space_xl;
+		padding: g.$space_xxl;
+		text-align: center;
+		border: 1px solid g.$color-border;
+		border-radius: 10px;
+		background: g.$color-base;
+		@include g.mq(md) {
+			width: 100%;
+		}
+		@include g.mq() {
+			margin-bottom: g.$space_l;
+			padding: g.$space_l;
+			text-align: left;
+		}
+		&--alert{
+			@extend .c-pageSet__navi;
+			border-color: #ffe5e5;
+			background: #ffe5e5;
+		}
+		&--valError{
+			@extend .c-pageSet__navi--alert;
+			padding: g.$space_xl;
+			@include g.mq() {
+				padding: g.$space_l;
+			}	
+		}
+		&--requireWebResume{
+			@extend .c-pageSet__navi;
+			padding: g.$space_xl g.$space_m;
+			background: #ffffe5;
+			border: 1px solid g.$color-accent;
+			font-size: g.$font-size_s;
+		}
+		&--error{
+			@extend .c-pageSet__navi;
+			@include g.mq() {
+				text-align: center;
+			}	
+		}
+	}
+	&__naviIcon{
+		font-size: g.$font-size_ll;
+		color: g.$color_accent;
+	}
+	&__naviIcon, &__naviText{
+		vertical-align: middle;
+	}
+	&__catch{
+		color: g.$color_accent;
+		font-size: g.$font-size_l;
+		font-weight: bold;
+		font-feature-settings: "palt";
+		i{
+			margin-right: g.$space_s;
+			font-size: g.$font-size_ll;
+			vertical-align: middle;
+		}
+		&--alert{
+			@extend .c-pageSet__catch;
+			color: #EE4422;
+		}
+	}
+	&__catchText{
+		vertical-align: middle;
+	}
+	&__copy{
+		margin-top: g.$space_m;
+	}
+	&__link{
+		display: inline-block;
+		color: g.$color_main;
+	}
+	&__btnArea{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: g.$space_xl;
+		margin-top: g.$space_3l;
+		text-align: center;
+		@include g.mq(md) {
+			flex-direction: column;
+			gap: g.$space_l;
+		}
+		@include g.mq() {
+			margin-top: g.$space_xxl;
+		}
+	}
+	&__errorList{
+		margin-top: g.$space_m;
+	}
+	&__errorItem{
+		margin-bottom: g.$space_s;
+		font-size: g.$font-size_s;
+		color: #c8523a;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}

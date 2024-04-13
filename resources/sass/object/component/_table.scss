@@ -1,0 +1,183 @@
+
+@use "../../global" as g;
+
+.c-table{	  
+	width: 100%;
+	word-break: break-all;
+	white-space: pre-line;
+	border: 1px solid g.$color-border;
+	border-radius: g.$space_s;
+	@include g.mq(md) {
+		border-bottom: none;
+	}
+	&__tr{
+	}
+	&__th{
+		width: 20%;
+		min-width: 250px;
+		padding: g.$space_xxl g.$space_xl;
+		text-align: left;
+		vertical-align: top;
+		background: g.$color-table;
+		font-weight: bold;
+		@include g.mq(md) {
+			width: 100%;
+			min-width: auto;
+		}
+		&--sub{
+			@extend .c-table__th;
+			background: #f0faff;
+		}
+		&--p25{
+			@extend .c-table__th;
+			padding: 25px g.$space_xl;
+		}	
+	}
+	&__thUnit{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}	
+	&__thTitle{
+	}	
+	&__td{
+		padding: g.$space_xl;
+		background: g.$color-base;
+		position: relative;
+		vertical-align: middle;
+		p{
+			&:last-child{
+				margin-bottom: 0;
+			}	
+		}
+		&--sub{
+			@extend .c-table__td;
+			width: auto;
+		}
+		&--textarea{
+			@extend .c-table__td;
+			white-space: pre-wrap;
+		}		
+	}
+	&__th, &__td{
+		border: 1px solid g.$color-border;
+		@include g.mq(md) {
+			display: block;
+			width: 100%;
+			padding: g.$space_xl;
+			text-align: start;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+		}
+		@include g.mq() {
+			padding: g.$space_l;
+		}
+	}	
+	&__th--sub, &__td--sub{
+		padding: g.$space_l;
+		vertical-align: middle;
+		@include g.mq(md) {
+			text-align: center;
+		}
+	}
+	&__flexWrap{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	// バッジ
+	&__badge{
+		border: none;
+		border-radius: 3px;
+		padding: 0 g.$space_m;
+		text-align: center;
+		color: #fff;
+		font-size: g.$font-size_s;
+		float: right;
+		&--require{
+			@extend .c-table__badge;
+			background: red;
+		}
+		&--any{
+			@extend .c-table__badge;
+			color: #0b4;
+   			border: 1px solid #0b4;
+			background: g.$color-base;
+		}	
+	}
+	&__inputArea{
+		position: relative;
+		&--l{
+			@extend .c-table__inputArea;
+			width: 500px;
+			@include g.mq(lg) {
+				width: 100%;
+			}	
+		}
+	}
+	&__errMsg{
+		margin-top: g.$space_m;
+		text-align: left;
+		color: g.$color-valText;
+		&--mb10{
+			@extend .c-table__errMsg;
+			margin-bottom: g.$space_m;
+		}
+	}
+	&__imageArea{
+		width: 150px;
+		margin-bottom: g.$space_xl;
+		@include g.mq(md) {
+			margin: 0 auto g.$space_xl;
+		}
+	}
+	&__countText{
+		text-align: left;
+		font-weight: bold;
+		font-size: g.$font-size_s;
+		span{
+			color: g.$color-accent;
+		}
+	}
+
+	// バージョン違い
+	&--thWidthM{
+		@extend .c-table;
+		th{
+			width: 280px;
+			@include g.mq(md) {
+				width: 100%;
+			}
+		}
+		td{
+			width: auto;
+		}	
+	}
+	&--thWidthL{
+		@extend .c-table;
+		th{
+			width: 300px;
+			@include g.mq(md) {
+				width: 100%;
+			}
+		}
+		td{
+			width: auto;
+		}	
+	}
+	&--showWebResume{
+		@extend .c-table;
+		th, td{
+			padding: g.$space_xl;
+			@include g.mq() {
+				padding: g.$space_l;
+			}	
+		}	
+		td{
+			font-size: g.$font-size_s;
+		}
+	}
+}

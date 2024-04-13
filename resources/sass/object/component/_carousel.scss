@@ -1,0 +1,104 @@
+@use "../../global" as g;
+
+.c-carousel{
+	margin-bottom: g.$space_xxl;
+	position: relative;
+	&__title{
+		margin-bottom: g.$space_m;
+		display: flex;
+		gap: g.$space_m;
+		flex-wrap: wrap;
+	}
+	&__titleText{
+		vertical-align: middle;
+		font-weight: bold;
+		font-size: g.$font-size_ll;
+	}
+	&__slideArea{
+		width: 100%;
+		margin: 0 auto g.$space_m;
+		position: relative;
+		z-index: 1;
+	}
+	&__wrapper{
+		overflow: hidden;
+		border-radius: g.$space_s;
+	}
+	&__list{
+		position: relative;
+		display: flex;
+		align-items: stretch;
+		background: g.$color_bgSub;
+		transition: left .4s ease;
+	}
+	&__item{
+		padding: g.$space_l g.$space_s g.$space_m;
+		transition: all .1s ease;
+		&:hover{
+			opacity: .8;
+		}
+		&.top{
+			pointer-events: none;
+		}
+	}
+	&__link{
+		display: inline-block;
+		position: relative;
+		background: g.$color_base;
+		border-radius: g.$space_s;
+		box-shadow: g.$box-shadow;
+		@include g.mq(lg) {
+			height: 100%;
+		}
+		&::before{
+			content: 'NEW';
+			display: inline-block;
+			padding: 0 g.$space_l;
+			position: absolute;
+			top: -10px;
+			left: 10px;
+			background-color: g.$color_accent;
+			color: g.$color_base;
+			font-weight: bold;
+			font-size: g.$font-size_s;
+			border-radius: g.$space_s;
+		}
+	}
+	&__btn{
+		cursor: pointer;
+		position: absolute;
+		top: calc(50% - 20px);
+		z-index: 1;
+		width: 40px;
+		height: 40px;
+		border: none;
+		border-radius: 50%;
+		background: #333;
+		opacity: .5;
+		font-size: g.$font-size_xl;
+		font-weight: bold;
+		color: g.$color_base;
+		&--left{
+			@extend .c-carousel__btn;
+			left: 0;
+		}
+		&--right{
+			@extend .c-carousel__btn;
+			right: 0;
+		}	
+	}
+	&__pager{
+		margin-bottom: g.$space_m;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: g.$space_m;
+	}
+	&__page{
+		cursor: pointer;
+		font-size: g.$font-size_ll;
+		&.active{
+			color: g.$color_main;
+		}
+	}
+}

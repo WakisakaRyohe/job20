@@ -1,0 +1,38 @@
+@use "../../global" as g;
+
+.c-breadCrumb{
+	padding: g.$space_s 0;
+	background: g.$color-base;
+	border-bottom: 1px solid #efefef;
+	font-size: 0.7rem;
+	color: #888;
+	&__list{
+		max-width: 1040px;
+		margin: 0 auto;
+		padding: 0 g.$space_xl;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	&__listItem{
+		&::after{
+			content: ">";
+			display: inline-block;
+			margin: 0 g.$space_m;
+			color: #888;
+		}
+		&:last-child{
+			&::after{
+				content: none;
+			}
+		}
+	}
+	&__link{
+		color: #888;
+		&:hover{
+			color: g.$color-accent;
+		}
+	}
+	&__text{
+	}
+}

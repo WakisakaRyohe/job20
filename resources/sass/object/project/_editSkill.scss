@@ -1,0 +1,58 @@
+@use "../../global" as g;
+
+.p-editSkill{
+	// 普通自動車免許
+	&__driverLicence{
+		display: flex;
+		align-items: center;
+		gap: g.$space_s;
+		flex-wrap: wrap;
+		margin-bottom: g.$space_m;
+		span{
+			font-weight: 600;
+		}
+	}
+
+	// レベル選択のセレクトボックスリスト
+	dl{
+		@include g.mq(md) {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-bottom: g.$space_m;
+		}
+	}
+	dt{
+		width: 3rem;
+		text-align: start;
+	}
+	dd{
+		@include g.mq(lg) {
+			width: 100%;
+		}
+	}
+
+	// 英語スキル
+	&__score{
+		flex-wrap: wrap;
+	}
+	&__scoreInput{
+		margin-right: g.$space_s;
+		width: 90px;
+		&--toeic{
+			@extend .p-editSkill__scoreInput;
+			margin-left: 3px;
+		}
+	}
+	&__toeic{
+		margin-right: g.$space_m;
+	}
+	&__scoreTitle{
+	}
+	&__errMsgScore{
+		margin-left: 4rem;
+		@include g.mq(md) {
+			margin-left: 0;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+@use "../../global" as g;
+
+.c-inner{
+	padding: g.$space_xl g.$space_xl 100px;
+	margin: 0 auto;
+	max-width: 100%;
+	@include g.mq() {
+		padding: g.$space_xl 4% g.$space_3l;
+	}
+	&.l-header__container, &.l-footer__container{
+		padding: 0 20px;
+		@include g.mq() {
+			padding: 0 4%;
+		}
+	}
+	&--s{
+		@extend .c-inner;
+		max-width: g.$width-s;
+	}
+	&--m{
+		@extend .c-inner;
+		max-width: g.$width-m;
+	}
+	&--l{
+		@extend .c-inner;
+		max-width: g.$width-l;
+	}
+	&--xl{
+		@extend .c-inner;
+		max-width: g.$width-xl;
+	}
+}

@@ -1,0 +1,11 @@
+@use "../../global" as g;
+
+.c-attention{
+	margin-top: g.$space_s;
+	font-size: g.$font-size_s;
+	color: #888;
+	line-height: 1.4;
+	// @include g.mq(md) {
+	// 	width:100%;
+	// }
+}

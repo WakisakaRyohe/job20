@@ -1,0 +1,33 @@
+@use "../../global" as g;
+
+.u-fw-bold{
+    font-weight: bold;
+}
+.u-fw-nomal{
+    font-weight: normal;
+}
+
+.u-fs-ss{
+    font-size: g.$font-size_ss;
+}
+.u-fs-s{
+    font-size: g.$font-size_s;
+}
+.u-fs-m{
+    font-size: g.$font-size_m;
+}
+.u-fs-l{
+    font-size: g.$font-size_l;
+}
+.u-fs-ll{
+    font-size: g.$font-size_ll;
+}
+.u-fs-xl{
+    font-size: g.$font-size_xl;
+}
+.u-fs-xxl{
+    font-size: g.$font-size_xxl;
+}
+.u-fs-3l{
+    font-size: g.$font-size_3l;
+}

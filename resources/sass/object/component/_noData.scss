@@ -1,0 +1,11 @@
+@use "../../global" as g;
+
+.c-noData{
+	padding: g.$space_xxl 0;
+	background: g.$color_bgSub;
+	border: 1px solid g.$color-border3rd;
+	border-radius: g.$space_s;
+	text-align: center;
+	font-weight: bold;
+	font-size: g.$font-size_s;
+}

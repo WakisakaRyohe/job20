@@ -1,0 +1,149 @@
+@use "../../global" as g;
+
+.p-topReview{
+	&__cards{
+		@include g.mq(lg) {
+			margin-bottom: -30px;
+		}
+		@include g.mq(md) {
+			margin-bottom: 0;
+			flex-direction: column;
+			gap: g.$space_xxl;
+		}
+	}
+	&__card{
+		width: 33%;
+		@include g.mq(md) {
+			width: 70%;
+		}
+		@include g.mq() {
+			width: 100%;
+		}
+	}
+	&__review{
+		min-height: 200px;
+		padding: g.$space_xl;
+		margin-bottom: g.$space_xl;
+		position: relative;
+		border: 1px solid #333;
+		border-radius: g.$space_m;
+		box-shadow: g.$box-shadow;
+		text-align: justify;
+		font-size: g.$font-size_s;
+		background: g.$color-base;
+		@include g.mq(lg) {
+			min-height: 250px;
+		}
+		@include g.mq(md) {
+			min-height: auto;
+		}
+		@include g.mq() {
+			font-size: g.$font-size_m;
+		}
+		&::before{
+			content: '';
+			display: inline-block;
+			border-top: 10px solid g.$color-base;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			position: absolute;
+			top: 100%;
+			left: 44px;
+			z-index: 1;
+		}
+		&::after{
+			content: '';
+			display: inline-block;
+			border-top: 12px solid #333;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			position: absolute;
+			top: 100%;
+			left: 42px;
+		}
+	}
+	&__dataArea{
+		padding: 0 g.$space_m;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		font-size: g.$font-size_ss;
+		color: #999;
+		@include g.mq(lg) {
+			min-height: 110px;
+			align-items: start;
+		}
+		@include g.mq(md) {
+			min-height: auto;
+			align-items: center;
+		}
+		@include g.mq() {
+			font-size: g.$font-size_s;
+		}
+	}
+	&__userData{
+		text-align: center;
+		flex: 0 0 80px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__img{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
+		border-radius: 50%;
+		border: 1px solid #00c1ff;
+	}
+	&__age{
+	}
+	&__occupationData{
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+	&__occupationBefore, &__occupationAfter{
+		display: flex;
+		align-items: center;
+		gap: g.$space_s;
+		flex-wrap: wrap;
+	}
+	&__occupationName{
+		vertical-align: middle;
+	}
+	&__triangle{
+		content: "";
+		display: inline-block;
+		margin: g.$space_s 0 3px 17px;
+		border-top: 8px solid #939393;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+	}
+	&__badge{
+		display: inline-block;
+		padding: 0 g.$space_s;
+		border-radius: g.$space_s;
+		color: g.$color-base;
+		vertical-align: middle;
+		font-size: g.$font-size_ss;
+		&--before{
+			@extend .p-topReview__badge;
+			background: #939393;
+		}	
+		&--after{
+			@extend .p-topReview__badge;
+			background: g.$color-main;
+		}	
+		@include g.mq() {
+			font-size: g.$font-size_s;
+		}
+	}
+	&__badgeText{
+	}
+	&__maker{
+		font-weight: bold;
+		color: g.$color-accent;
+	}
+}

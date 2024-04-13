@@ -1,0 +1,58 @@
+@use "../../global" as g;
+
+.c-form{
+	@include g.mq(md) {
+		width: 100%;
+	}
+	&__title{
+		padding: g.$space-xl;
+		border-top: 4px solid g.$color-main;
+		border-bottom: 1px solid #ddd;
+		background: #f5f8fc;
+		font-size: g.$font-size-l;
+		font-weight: bold;
+		@include g.mq() {
+			padding: g.$space_l;
+		}
+		&--jobCareer{
+			@extend .c-form__title;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 17px g.$space-xl;
+			border-top-color: #8dcd00;
+			background: #f6faf6;
+			@include g.mq() {
+				padding: 12px;
+				gap: 0;
+			}
+		}
+		&--skill{
+			@extend .c-form__title;
+			border-top-color: #b6a;
+			background: #fef9fc;
+		}
+		&--self_promotion{
+			@extend .c-form__title;
+			border-top-color: #e9ab00;
+    		background: #faf8f6;
+		}
+	}
+	&__alignCenterArea{
+		margin-top: g.$space_xl;
+		text-align: center;
+	}
+	&__link{
+		display: inline-block;
+		color: g.$color_main;
+	}
+	// バージョン違い
+	&--borderTop{
+		@extend .c-form;
+		border-top: 4px solid g.$color-main;
+	}
+	&--borderTopNone{
+		@extend .c-form;
+		border-top: none;
+	}
+}

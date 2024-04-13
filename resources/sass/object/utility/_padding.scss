@@ -1,0 +1,109 @@
+@use "../../global" as g;
+
+.u-p0{
+    padding: 0;
+}
+.u-p10{
+    padding: g.$space_m;
+}
+.u-p20{
+    padding: g.$space_xl;
+}
+.u-p30{
+    padding: g.$space_xxl;
+}
+.u-p40{
+    padding: g.$space_3l;
+}
+
+//padding-top
+.u-pt0{
+    padding-top: 0;
+}
+.u-pt5{
+    padding-top: g.$space_s;
+}
+.u-pt10{
+    padding-top: g.$space_m;
+}
+.u-pt15{
+    padding-top: g.$space_l;
+}
+.u-pt20{
+    padding-top: g.$space_xl;
+}
+.u-pt30{
+    padding-top: g.$space_xxl;
+}
+.u-pt40{
+    padding-top: g.$space_3l;
+}
+
+//padding-bottom
+.u-pb0{
+    padding-bottom: 0;
+}
+.u-pb5{
+    padding-bottom: g.$space_s;
+}
+.u-pb10{
+    padding-bottom: g.$space_m;
+}
+.u-pb15{
+    padding-bottom: g.$space_l;
+}
+.u-pb20{
+    padding-bottom: g.$space_xl;
+}
+.u-pb30{
+    padding-bottom: g.$space_xxl;
+}
+.u-pb40{
+    padding-bottom: g.$space_3l;
+}
+
+//padding-left
+.u-pl0{
+    padding-left: 0;
+}
+.u-pl5{
+    padding-left: g.$space_s;
+}
+.u-pl10{
+    padding-left: g.$space_m;
+}
+.u-pl15{
+    padding-left: g.$space_l;
+}
+.u-pl20{
+    padding-left: g.$space_xl;
+}
+.u-pl30{
+    padding-left: g.$space_xxl;
+}
+.u-pl40{
+    padding-left: g.$space_3l;
+}
+
+//padding-right
+.u-pr0{
+    padding-right: 0;
+}
+.u-pr5{
+    padding-right: g.$space_s;
+}
+.u-pr10{
+    padding-right: g.$space_m;
+}
+.u-pr15{
+    padding-right: g.$space_l;
+}
+.u-pr20{
+    padding-right: g.$space_xl;
+}
+.u-pr30{
+    padding-right: g.$space_xxl;
+}
+.u-pr40{
+    padding-right: g.$space_3l;
+}

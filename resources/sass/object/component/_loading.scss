@@ -1,0 +1,43 @@
+@use "../../global" as g;
+
+.c-loading{
+	/* 画面最大 */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	/* 背景色（黒、不透明度80%） */
+	/* background-color: #000000;
+	opacity: 0.8; */
+	/* フレックスコンテナ（縦並べ、横中央、縦中央） */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* 表示を一番上 */
+	z-index: 999;
+	/* 選択付加 */
+	user-select: none;
+	transform: translateY(-32px);
+	@include g.mq() {
+		transform: translateY(-58px);
+	}	
+	&__text {
+		/* colr: white; */
+		font-size: 20px;
+	}
+	&__blinkDot {
+		animation: blinkDot 1.2s linear infinite;
+		opacity: 0;
+	}
+}
+
+@keyframes blinkDot {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

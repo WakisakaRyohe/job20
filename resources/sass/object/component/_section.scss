@@ -1,0 +1,139 @@
+@use "../../global" as g;
+
+.c-section{
+	margin-bottom: g.$space_xxl;
+	border-radius: g.$space-s;
+	background: g.$color-sub;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	@include g.mq() {
+		margin-bottom: g.$space_l;
+	}
+	&__title{
+		position: relative;
+		padding: g.$space_m g.$space_xl;
+		font-weight: bold;
+		color: g.$color_base;
+		background: g.$color_main;
+		border-radius: g.$space-s g.$space-s 0 0;
+		&--grad{
+			@extend .c-section__title;
+			background: linear-gradient( to left, #85d8fb 0%, #53c5f8 100% );
+		}
+	}
+	&__tab{
+		@extend .c-section__title;
+		padding: 0;
+		background: g.$color-sub;	
+	}
+	&__container{
+		padding: g.$space_xl g.$space_xl g.$space_3l;
+		border-radius: 0 0 g.$space-s g.$space-s;
+		background: g.$color-base;
+		border: 1px solid #d6e9ea;
+		@include g.mq() {
+			padding: g.$space_l g.$space_l g.$space_xxl;
+		}
+		&--selectList{
+			@extend .c-section__container;
+			height: 450px;
+			overflow: auto;	
+			border-radius: g.$space-s;
+			border-top: none;
+			@include g.mq(md) {
+				height: auto
+			}		
+		}
+		&--rule{
+			@extend .c-section__container;
+			padding: g.$space_3l;
+			border-radius: g.$space_s;
+			font-size: g.$font-size_s;
+			@include g.mq() {
+				padding: g.$space_xl g.$space_l g.$space_xxl;
+			}
+			& > * {
+				@include g.mq() {
+					margin-bottom: g.$space_xl;
+				}
+			}
+
+		}	
+	}
+	&__description{
+		margin-bottom: g.$space_xl;
+		text-align: center;
+		@include g.mq(md) {
+			text-align: left;
+		}		
+	}
+	&__dataSet{
+		margin-bottom: g.$space_3l;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&--rule{
+			@extend .c-section__dataSet;
+			@include g.mq() {
+				margin-bottom: g.$space_xl;
+			}
+		}	
+	}
+	&__subject{
+		margin-bottom: g.$space_m;
+		font-weight: bold
+	}
+	&__text{
+		padding: 0 g.$space_xl;
+		p{
+			margin-bottom: g.$space_m;
+			&:last-child{
+				margin-bottom: 0;
+			}	
+		}
+		&--rule{
+			@extend .c-section__text;
+			@include g.mq() {
+				padding: 0 g.$space_s;
+			}	
+		}	
+	}
+	&__ol{
+		margin-bottom: g.$space_m;
+		padding-left: 50px;
+		list-style: auto;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&--rule{
+			@extend .c-section__ol;
+			@include g.mq() {
+				padding-left: 25px;
+			}	
+		}	
+	}
+	&__li{
+		margin-bottom: g.$space_s;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__last{
+		text-align: end;
+		span{
+			display: inline-block;
+			margin-top: g.$space_m;
+			text-align: left;
+		}
+	}
+	&__link{
+		display: inline-block;
+		color: g.$color_main;
+	}
+	// バージョン違い
+	&--selectList{
+		@extend .c-section;
+		padding: 0 g.$space-s g.$space-s g.$space-s;
+	}
+}

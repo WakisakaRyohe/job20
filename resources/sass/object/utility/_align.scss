@@ -1,0 +1,21 @@
+@use "../../global" as g;
+
+.u-alignTop{
+	vertical-align: top;
+}
+.u-alignMiddle{
+	vertical-align: middle;
+}
+.u-alignBottom{
+	vertical-align: bottom;
+}
+
+.u-alignCenter{
+	text-align: center;	
+}
+.u-alignLeft{
+	text-align: left;	
+}
+.u-alignRight{
+	text-align: right;	
+}

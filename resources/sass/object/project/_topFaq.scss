@@ -1,0 +1,100 @@
+@use "../../global" as g;
+
+.p-topFaq{
+	&__container{
+		width: 800px;
+		margin: 0 auto;
+		@include g.mq(lg) {
+			width: 90%;
+		}
+		@include g.mq(md) {
+			width: 100%;
+		}
+	}
+	&__titleText{
+		background: g.$color_base;
+	}
+	&__cards{
+		display: block;
+	}
+	&__card{
+		transform: translateY(0);
+		transform: translateX(-200px);
+	}
+	&__accordion{
+		margin-bottom: g.$space_xl;
+		border: 1px solid g.$color_borderSub;
+		border-radius: g.$space_m;
+		border-left: none;
+		@include g.mq() {
+			margin-bottom: g.$space_l;
+		}
+	}
+	&__toggle{
+		padding: g.$space_xl 60px g.$space_xl g.$space_xl;
+		display: flex;
+		align-items: center;
+		gap: g.$space_xl;
+		flex: 1 1 auto;
+		border-bottom: 1px solid g.$color_borderSub;
+		font-size: g.$font-size_l;
+		font-weight: 700;
+		@include g.mq() {
+			padding: g.$space_l 45px g.$space_l g.$space_l;
+			gap: g.$space_l;
+		}
+		&:hover{
+			color: g.$color-accent;
+		}
+		&::before{
+			content: 'Q';
+			width: 40px;
+			height: 40px;
+			display: grid;
+			place-items: center;
+			flex: 0 0 40px;
+			border-radius: 50%;
+			background: g.$color-main;
+			font-size: g.$font-size_ll;
+			color: g.$color-base;
+		}
+		i{
+			top: auto;
+		}
+	}
+	&__answer{
+		display: flex;
+		align-items: center;
+		gap: g.$space_xl;
+		padding: g.$space_xl;
+		background-color: g.$color-bgSub;
+		@include g.mq() {
+			padding: g.$space_l g.$space_3l g.$space_l g.$space_l;
+			gap: g.$space_l;
+		}
+		&::before{
+			content: 'A';
+			width: 40px;
+			height: 40px;
+			display: grid;
+			place-items: center;
+			flex: 0 0 40px;
+			border-radius: 50%;
+			background: #FA6482;
+			font-size: g.$font-size_ll;
+			color: g.$color-base;
+		}
+	}
+	&__toggle::before, &__answer::before{
+		@include g.mq() {
+			width: 30px;
+			height: 30px;
+			flex: 0 0 30px;
+		}
+	}
+	&__icon{
+		@include g.mq() {
+			right: g.$space_m;
+		}
+	}
+}

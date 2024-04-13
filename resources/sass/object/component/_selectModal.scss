@@ -1,0 +1,148 @@
+@use "../../global" as g;
+
+.c-selectModal{
+	margin-top: g.$space-m;
+	&__title{
+		position: relative;
+		margin-bottom: g.$space-xl;
+		font-weight: bold;
+		font-size: g.$font-size_l;
+		i{
+			font-size: g.$font-size_xl;
+			color: g.$color-main;
+		}
+		@include g.mq() {
+			margin-bottom: g.$space-l;
+		}
+	}
+	&__titleText{
+		display: flex;
+		align-items: center;
+		gap: g.$space-m;
+	}
+	&__closeButton{
+		cursor: pointer;
+		position: absolute;
+		top: g.$space-m;
+		right: g.$space-l;
+		font-size: g.$font-size_3l !important;
+		color: g.$color-borderSub !important;
+	}	
+	&__serachBox{
+		font-size: g.$font-size_m;
+		padding: g.$space_m;
+		border: 2px solid #4ac0ff;
+		background: #ffe9e9;
+		@include g.mq(lg) {
+			width: 500px;
+		}
+		@include g.mq(md) {
+			width: 100%;
+		}
+	}
+	&__decideButton{
+		width: 200px;
+		height: 50px;
+		margin: 0 auto;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		letter-spacing: 0.1em;
+		background: #00c1ff;
+		font-size: g.$font-size_m;
+		color: g.$color_base;
+		font-weight: bold;
+		line-height: 1;
+		border: none;
+		border-radius: g.$space_s;
+		box-shadow: g.$box-shadow_sub;
+		@include g.mq() {
+			width: 180px;
+			height: 40px;
+			}
+		&:hover{
+			cursor: pointer;
+			opacity: .8;	
+		}
+	}
+	&__decideButtonArea{
+		text-align: center;
+	}
+	&__noIndex{
+		text-align: center;
+	}
+	&__noIndexButton{
+		position: relative;
+		display: block;
+		color: black;
+		border: solid 2px #b1aeae;
+		margin: g.$space_l auto;
+		width: 320px;
+		padding: g.$space_m;
+		font-size: g.$font-size_s;
+		border-radius: g.$space_s;
+		text-align: center;
+		font-weight: bold;
+		@include g.mq(md) {
+			width: auto;
+		}
+	}
+	&__noIndexIcon{
+		position: absolute;
+		top: 32%;
+		font-size: g.$font-size_m;
+		color: #b1aeae;
+		right: g.$space_m;
+	}
+	&__freeWordInput{
+		padding: g.$space_m;
+	}
+	&__textarea{
+		margin-top: g.$space_l;
+		width: 500px;
+		height: 100px;
+		font-size: g.$font-size_m;
+		padding: g.$space_m;
+		border: 2px solid #4ac0ff;
+		border-radius: g.$space_s;
+		@include g.mq(md) {
+			width: 100%;
+		}
+	}
+	&__backLinkArea{
+		margin: g.$space_m 0 0 g.$space_s;
+	}
+	&__backLink{
+		position: relative;
+		color: #4ac0ff;
+	}
+	&__backIcon{
+		margin-right: g.$space_s;
+	}
+	&__selectSet{
+		display: flex;
+		gap: g.$space_m;
+		margin-bottom: g.$space_xl;
+		padding: g.$space_l;
+		background: #FFF1F1;
+		border-radius: g.$space_s;
+		@include g.mq() {
+			flex-direction: column;
+		}
+	}
+	&__selectText{
+		flex: 0 0 60px;
+		display: grid;
+		place-items: center;
+		color: #FF6666;
+		font-weight: bold;
+		@include g.mq() {
+			flex: 0;
+		}
+	}
+	&__errMsg{
+		margin-top: g.$space_m;
+		text-align: left;
+		color: g.$color-valText;
+	}
+}

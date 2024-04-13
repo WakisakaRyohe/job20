@@ -1,0 +1,162 @@
+@use "../../global" as g;
+
+.c-searchNaviArea{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: g.$space_m;
+	margin-bottom: g.$space_xxl;
+    padding: g.$space_l;
+    border-radius: g.$space_s;
+	border: 1px solid #e2f2f3;
+	background: rgba(255,255,255,0.6);
+	@include g.mq(md) {
+		flex-direction: column;
+		gap: g.$space_xl;
+		padding: 0;
+		border-radius: 0;
+		border: none;
+		background: none;
+	}
+	@include g.mq(md) {
+		gap: g.$space_l;
+	}
+
+	// ページネーションの件数表示
+	&__counter{
+		position: relative;
+		color: #666;
+		font-weight: bold;
+		@include g.mq(md) {
+			margin-bottom: g.$space_m;
+			text-align: center;
+			color: g.$color-base;
+		}	
+	}
+	&__countNum{
+		margin: 0 3px;
+		color: g.$color_accent;	
+		font-size: g.$font-size_ll;
+		@include g.mq(md) {
+			color: #ffef63;
+		}	
+	}
+	&__countData{
+		letter-spacing: 0;
+		font-feature-settings: "palt";
+		font-size: g.$font-size_s;
+	}
+
+	// タブレットより小さい画面の検索ボックス
+	&__searchUnit{
+		width: 100%;
+		padding: g.$space_l;
+		border-radius: g.$space_s;
+		background: g.$color-main;
+	}
+
+	// 検索パネル
+	&__searchPanel{
+		@include g.mq(md) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 4;
+			width: 100%;
+			height: 100vh;
+			overflow-y: scroll;
+			overscroll-behavior: none; // 下の要素をスクロールしない
+			transition: .5s;
+			transform: translateY(-100vh);
+			&.active {
+				transition: .5s;
+				transform: translateY(0);
+			}	
+		}
+	}
+
+	// ページネーション
+	&__pagination{
+		min-width: 300px;
+	}
+
+	// 並び替え
+	&__sort{
+		min-width: 180px;
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: g.$space_m;
+		@include g.mq(md) {
+			width: 350px;
+			margin: 0 auto;
+			justify-content: center;
+			gap: 0;
+			&::after{
+				content: none;
+			}
+		}	
+		@include g.mq() {
+			width: 240px;
+		}	
+	}
+	&__sortItem{
+		width: 33%;
+		padding: g.$space_m;
+		text-align: center;
+		background: g.$color-bgSub;
+		border: 1px solid g.$color-border;
+		font-size: g.$font-size_s;
+		letter-spacing: 0;
+		@include g.mq() {
+			padding: g.$space_s;
+		}
+		&:hover{
+			cursor: pointer;
+			color: g.$color-accent;
+		}
+		&:first-child{
+			border-right: none;
+			border-radius: g.$space_m 0 0 g.$space_m;
+		}
+		&:last-child{
+			border-left: none;
+			border-radius: 0 g.$space_m g.$space_m 0;
+		}
+		&.selected{
+			background: g.$color-base;
+			font-weight: bold;
+			pointer-events: none;
+		}
+	}
+	&__sortText{
+		font-size: g.$font-size_s;
+		color: #999;
+	}
+
+	&__zeroAnnounceCopy{
+		margin-bottom: g.$space_s;
+		text-align: center;
+		color: #4d4d4d;
+		font-weight: bold;
+	}
+	&__zeroAnnounceText{
+		margin-bottom: 0;
+		text-align: center;
+		line-height: 1.4;
+		font-size: g.$font-size_s;
+		color: #666;
+	}
+
+	// バージョン違い
+	&--zeroAnnounce{
+		@extend .c-searchNaviArea;
+		display: block;
+		margin-bottom: 0;
+		padding: g.$space_xxl g.$space_xl;
+		min-height: 130px;
+		@include g.mq(md) {
+			background: rgba(255,255,255,0.6);
+		}	
+	}	
+}

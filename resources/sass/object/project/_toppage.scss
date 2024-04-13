@@ -1,0 +1,36 @@
+@use "../../global" as g;
+
+.p-toppage{
+	&--bgColorChange{
+		background: g.$color-bgSub;
+	}
+	&__container{
+		padding-bottom: g.$space_4l;
+	}
+	&__about{
+		font-size: g.$font-size_l;
+		@include g.mq() {
+		  font-size: g.$font-size_m;
+		}
+	}
+	&__marker{
+		background: rgb(255, 193, 9);
+		font-weight: bold;
+	}
+	&__closing{
+		text-align: center;
+		font-size: g.$font-size_l;
+		@include g.mq() {
+		  font-size: g.$font-size_m;
+		}
+	}
+	&__button{
+		margin: 0 auto;
+		span{
+			display: none;
+			@include g.mq() {
+				display: inline;
+			}	  
+		}
+	}
+}

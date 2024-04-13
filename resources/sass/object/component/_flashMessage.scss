@@ -1,0 +1,15 @@
+@use "../../global" as g;
+
+.c-flashMessage {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	min-height: 100px;
+	padding: g.$space_xxl 0;
+	background: rgb(195, 255, 195);
+	text-align: center;
+	font-size: g.$font-size_xl;
+	@include g.mq() {
+		font-size: g.$font-size_m;
+	}
+}

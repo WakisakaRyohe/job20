@@ -1,0 +1,23 @@
+@use "../../global" as g;
+
+.u-radius0{
+    border-radius: 0;
+}
+.u-radius5{
+    border-radius: g.$space-s;
+}
+.u-radius10{
+    border-radius: g.$space-m;
+}
+.u-radius15{
+    border-radius: g.$space-l;
+}
+.u-radius20{
+    border-radius: g.$space-xl;
+}
+.u-radius30{
+    border-radius: g.$space-xxl;
+}
+.u-radius40{
+    border-radius: g.$space-3l;
+}

@@ -1,0 +1,173 @@
+@use "../../global" as g;
+
+.p-topSolution{
+	position: relative;
+	padding: 130px g.$space_xl 80px;
+	@include g.mq() {
+		padding: 100px g.$space_xl 80px;
+	}
+	&::after{
+		content: '';
+		display: inline-block;
+		border-top: 50px solid g.$color-bgSub;
+		border-left: 150px solid transparent;
+		border-right: 150px solid transparent;
+		border-bottom: 50px solid transparent;
+		position: absolute;
+		top: 0;
+		left: calc(50% - 150px);
+	}
+	&__titleText{
+		background-image: linear-gradient(rgba(255, 255, 255, 0) 70%, #f90 0%);
+		// background-image: linear-gradient(rgba(255, 255, 255, 0) 70%, #f9cc5b 0%);
+	}
+	&__about{
+		margin-bottom: g.$space_3l;
+		text-align: center;
+		line-height: 1.8;
+		font-weight: 300;
+		font-size: g.$font-size_l;
+		@include g.mq() {
+			margin-bottom: g.$space_xxl;
+		}
+	}
+	&__card{
+		width: 33%;
+		background: g.$color-base;
+		border-radius: g.$space_m;
+		box-shadow: g.$box-shadow;
+		@include g.mq(md) {
+			width: 100%;
+			display: flex;
+		}
+		@include g.mq() {
+			display: block;
+		}
+	}
+	&__cardUnit{
+		@include g.mq(md) {
+			display: flex;
+			align-items: center;
+			gap: g.$space_l;
+			padding: g.$space_xl;
+		}
+	}
+	&__cardSubUnit{
+		@include g.mq(md) {
+			flex: 1 1 auto;
+		}
+	}
+	&__label{
+		padding: g.$space_xl;
+		@include g.mq(lg) {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: g.$space_m;
+		}
+		@include g.mq(md) {
+			margin-bottom: g.$space_l;
+			padding: 0;
+			flex-direction: row;
+			justify-content: start;
+			gap: g.$space_xl;
+			flex-wrap: wrap;
+		}
+		@include g.mq() {
+			margin-bottom: 0;
+			padding: g.$space_xl;
+			justify-content: center;
+			gap: g.$space_m;
+		}
+	}
+	&__badge{
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+		position: relative;
+		vertical-align: middle;
+		letter-spacing: 0;
+		border-radius: 50%;
+		box-shadow: g.$box-shadow;
+		background: g.$color-accent;
+		color: g.$color-base;
+		@include g.mq(md) {
+			width: 50px;
+			height: 50px;
+		}
+	}
+	&__point{
+		position: absolute;
+		top: 10px;
+		left: calc(50% - 20px);
+		font-size: g.$font-size_ss;
+		@include g.mq(md) {
+			top: 8px;
+			left: calc(50% - 14px);
+			font-size: 0.6rem;	
+		}
+	}
+	&__num{
+		position: absolute;
+		top: 25px;
+		left: calc(50% - 23px);
+		font-weight: bold;
+		font-size: g.$font-size_3l;
+		@include g.mq(md) {
+			top: 17px;
+			left: calc(50% - 11px);
+			font-size: g.$font-size_ll;
+		}
+	}
+	&__imgArea{
+		@include g.mq(md) {
+			flex: 0 0 30%;
+			display: flex;
+			align-items: center;
+		}
+		@include g.mq() {
+			flex: 0;
+		}
+	}
+	&__img{
+		aspect-ratio: 3 / 2;
+		object-fit:cover;
+		@include g.mq(md) {
+			aspect-ratio: 4 / 3;
+		}
+		@include g.mq() {
+			aspect-ratio: 2 / 1;
+			object-position: 0 20%;
+		}
+	}
+	&__cardTitle{
+		display: inline-block;
+		margin-left: g.$space_m;
+		vertical-align: middle;
+		font-weight: bold;
+		font-size: g.$font-size_xl;
+		@include g.mq(lg) {
+			margin-left: 0;
+		}
+	}
+	&__cardText{
+		min-height: 160px;
+		padding: g.$space_xl g.$space_xl 0;
+		line-height: 1.8;
+		@include g.mq(lg) {
+			min-height: 190px;
+		}
+		@include g.mq(md) {
+			min-height: auto;
+			padding: 0;
+		}
+		@include g.mq() {
+			padding: g.$space_xl g.$space_xl g.$space_xxl;
+		}
+	}
+	&__maker{
+		background-image: linear-gradient(rgba(255, 255, 255, 0) 70%, #85d8fb 0%);
+	}
+}

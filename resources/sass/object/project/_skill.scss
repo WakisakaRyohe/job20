@@ -1,0 +1,42 @@
+@use "../../global" as g;
+
+.p-skill{
+	&__certificationsList{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__certificationsItem{
+		&::after{
+			content: '/';
+			margin: 0 g.$space_m;
+		}
+		&:last-child{
+			&::after{
+				content: none;
+				margin: 0;
+			}
+		}	
+	}
+	&__textUnit{
+		margin-bottom: g.$space_xl;
+		& > * {
+			margin-bottom: g.$space_s;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__languageLevelArea{
+		display: flex;
+		align-items: center;
+	}
+	&__languageLevelType{
+		flex: 0 0 50px;
+		&--score{
+			flex: 0 0 70px;
+		}
+	}
+	&__languageLevelValue{
+		flex: 1 1 auto;
+	}
+}

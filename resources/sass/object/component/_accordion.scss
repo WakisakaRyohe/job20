@@ -1,0 +1,27 @@
+@use "../../global" as g;
+
+.c-accordion{
+	color: #1a1c1d;
+	// border-left: g.$space_m solid rgba(0, 0, 0, 0.12);
+	&__toggle {
+		position: relative;
+		color: #1a1c1d;
+		display: block;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	&__icon{
+		position: absolute;
+		right: 15px;
+		top: 30%;
+		font-size: 1.5em;
+		transition: 0.3s ease-in-out;
+	}	
+	&__body {
+		overflow: hidden;
+		transition: .3s ease-in-out;
+	}
+	&__details {
+		padding: g.$space_m;
+	}	
+}

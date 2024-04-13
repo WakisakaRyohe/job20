@@ -1,0 +1,128 @@
+@use "../../global" as g;
+
+.c-modal{
+	position: relative;
+	z-index: 6;
+	cursor: default;
+	&__bg{
+		position: fixed;
+		display: flex;
+		background: rgba(0,0,0,.5);
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		justify-content: center;
+		align-items: center;
+		overflow: auto;
+		overscroll-behavior: none; // 下の要素をスクロールしない
+	}
+	&__body {
+		position: relative;
+		width: 600px;
+		padding: g.$space-xxl g.$space-l;
+		text-align: center;
+		background: g.$color_base;
+		color: #333;
+		border: 1px solid #d1d1d1;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+		border-radius: g.$space_s;
+		overflow: auto;
+		overscroll-behavior: none; // 下の要素をスクロールしない
+		@include g.mq(md) {
+			width: 100%;
+			margin: 0 4%;
+		}
+		&--l{
+			@extend .c-modal__body;
+			width: 1000px;
+			height: 96%;
+			text-align: left;
+			@include g.mq(lg) {
+				width: 96%;
+			}	
+		}
+	}
+	&__flash{
+		width: 100%;
+		padding: g.$space-xxl g.$space-m;
+		text-align: center;
+		background: rgba(0,0,0,0.7);
+		color: g.$color_base;
+		font-size: g.$font-size_ll;
+		font-weight: bold;
+	}
+	&__text{
+		font: inherit;
+		margin-bottom: g.$space-xl;
+	}
+	&__buttonArea{
+		display: flex;
+		justify-content: center;
+		gap: g.$space_3l;
+		@include g.mq() {
+			gap: g.$space_m;
+		}
+	}
+	&__button {
+		cursor: pointer;
+		width: 160px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 1.1rem;
+		font-weight: 700;
+		box-shadow: 0 1px 2px 0 #bbb6a8;
+		border: solid red 1px;
+		border-radius: g.$space_m;
+		background: red;
+		color: #fff;
+		&:hover{
+			opacity: .5;
+		}
+		@include g.mq() {
+			height: 30px;
+			line-height: 30px;
+		}	
+		&--no{
+			@extend .c-modal__button;
+			border: 1px solid transparent;
+			background: g.$color-base;
+			border-color: g.$color-main;
+			color: #333;
+		}
+	}
+	&__lightBox{
+		position: relative;
+		border: 3px solid g.$color-base;
+		border-radius: g.$space_s;
+		@include g.mq(md) {
+			width: 100%;
+			margin: 0 4%;
+		}
+	}
+	&__closeButton{
+		cursor: pointer;
+		position: absolute;
+		top: -25px;
+		right: -25px;
+		background: #111;
+		color: g.$color-base;
+		border-radius: 50%;
+		font-size: g.$font-size_xl;
+		border: 3px solid g.$color-base;
+		width: 50px;
+		height: 50px;
+		padding: 0;
+		@include g.mq(md) {
+			top: 0px;
+			right: 0px;	
+		}	
+		@include g.mq() {
+			width: 40px;
+			height: 40px;
+		}
+		&:hover, &:focus, &:active{
+			border-color: g.$color-base;
+		}	
+	}
+}

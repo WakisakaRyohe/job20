@@ -1,0 +1,26 @@
+@use "../../global" as g;
+
+.p-editJobCareer{
+	&__period{
+		@include g.mq(lg) {
+			flex-direction: column;
+			align-items: center;
+			gap: 0;
+		}
+	}
+	&__periodError{
+		white-space: normal;
+	}
+	&__periodSelectBox{
+		width: 150px;
+		@include g.mq(lg) {
+			width: 50%;
+		}
+	}
+	&__industrySelectBox{
+		width: 230px;
+		@include g.mq() {
+			width: 100%;
+		}
+	}
+}

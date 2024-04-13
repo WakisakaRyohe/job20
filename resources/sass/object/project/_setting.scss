@@ -1,0 +1,54 @@
+@use "../../global" as g;
+
+.p-setting{
+	&__title{
+		margin-bottom: g.$space_xl;
+		@include g.mq() {
+			margin-bottom: g.$space_l;
+		}
+	}
+	&__navi{
+		margin-bottom: g.$space_xxl;
+		@include g.mq() {
+			margin-bottom: g.$space_l;
+		}
+	}
+	&__copy{
+	}
+	&__th{
+		min-width: 200px;
+	}
+	&__btnBase{
+		width: 170px;
+		padding: 12px 0;
+		text-align: center;
+		@include g.mq(md) {
+			width: 100%;
+			min-width: auto;
+		}	
+	}
+	&__btn{
+		font-size: g.$font-size_s;
+	}
+	&__withdrawalTitle{
+		background: #aaa;
+	}
+	&__withdrawalTh{
+		width: auto;
+		min-width: auto;
+		background: g.$color-base;
+		font-weight: normal;
+	}
+	&__withdrawalBtn{
+		font-size: g.$font-size_s;
+		border: 1px solid g.$color-borderSub;
+		background: g.$color-base;
+		color: g.$color-main;
+		span{
+			&::after{
+				content: '>';
+				margin-left: g.$space_s;
+			}		
+		}
+	}
+}

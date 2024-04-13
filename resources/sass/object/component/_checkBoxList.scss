@@ -1,0 +1,62 @@
+@use "../../global" as g;
+
+.c-checkBoxList{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	word-break: break-all;
+	@include g.mq() {
+		gap: g.$space_m;
+	}
+	&__item{
+		width: 50%;
+		padding: 0 g.$space_l;
+		border-bottom: 1px solid g.$color-border;
+		@include g.mq(md) {
+			width: 100%;
+		}
+		&--column3{
+			@extend .c-checkBoxList__item;
+			width: 33.3%;
+			@include g.mq(md) {
+				width: 50%;
+			}
+			@include g.mq() {
+				width: 100%;
+			}	
+		}
+		&--freeword{
+			@extend .c-checkBoxList__item;
+			width: auto;
+			border-bottom: none;
+			@include g.mq() {
+				padding: 0;
+			}	
+		}
+	}
+	&__label{
+		cursor: pointer;
+		height: 100%;
+		position: relative;
+		display: grid;
+		place-items: center left;
+		padding: g.$space_m g.$space_m g.$space_m g.$space_xxl;
+		font-size: g.$font-size_s;
+		&::before{
+			content: "";
+			display: inline-block;
+			width: g.$space_xl;
+			height: g.$space_xl;
+			background: g.$color-base;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -10px;
+		}
+		// @include g.mq() {
+		// 	padding: 0 0 0 g.$space_3l;
+		// }	
+	}
+}

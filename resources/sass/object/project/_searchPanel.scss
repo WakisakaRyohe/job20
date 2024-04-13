@@ -1,0 +1,124 @@
+@use "../../global" as g;
+
+.p-searchPanel{
+	select{
+		font-size: g.$font-size_s;
+		@include g.mq() {
+		  font-size: g.$font-size_m;
+		}	  
+	}
+	&__title{
+		padding: g.$space_m g.$space_l;
+		font-size: g.$font-size_l;
+		@include g.mq(md) {
+			padding: g.$space_l;
+		}	
+	}
+	&__closeButton{
+		cursor: pointer;
+		position: absolute;
+		top: 7px;
+		right: 15px;
+		color: g.$color-base;
+		font-size: g.$font-size_3l;
+		&:hover, &:focus, &:active{
+			border-color: g.$color-base;
+		}	
+		@include g.mq(md) {
+			top: 12px;
+		}	
+	}
+	&__list{
+	}
+	&__item{
+		padding: g.$space_xl g.$space_l;
+		border-bottom: 1px solid g.$color-borderSub;
+		font-size: g.$font-size_s;
+		&--btnArea{
+			@extend .p-searchPanel__item;
+			background: g.$color-bgSub;
+			border-radius: 0 0 g.$space_s g.$space_s;
+			@include g.mq(md) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				padding-bottom: 60px;
+				text-align: center;
+			}	
+		}	
+	}
+	&__icon{
+		display: inline-block;
+		margin-right: g.$space_m;
+		color: g.$color_main;
+		font-size: g.$font-size_l;
+	}
+	&__itemTitle{
+		margin-bottom: g.$space_s;
+		font-weight: bold;
+		font-size: g.$font-size_m;
+	}
+	&__annualIncome{
+		display: inline-block;
+		width: calc(100% - 5rem);
+		margin-right: g.$space_m;
+	}
+	&__commitments{
+		button{
+			width: 100%;
+			&::before{
+				@include g.mq(md) {
+					top: 8px;
+					left: g.$space_m;
+				}	
+			}
+			@include g.mq(md) {
+				width: 220px;
+				padding: g.$space_m g.$space_l;
+			}	
+		}
+	}
+	&__commitments, &__keyword{
+		&::after{
+			border: none;
+		}
+	}
+	&__btnBase{
+		margin-bottom: g.$space_m;
+		position: relative;
+		@include g.mq(md) {
+			width: 220px;
+		}
+	}
+	&__btnIcon{
+		position: absolute;
+		top: 14px;
+		left: 24px;
+		z-index: 2;
+		color: g.$color-base;
+		font-size: g.$font-size_l;
+		&--reset{
+			@extend .p-searchPanel__btnIcon;
+			color: #333;
+		}
+	}
+	&__btn{
+		display: inline-block;
+		width: 100%;
+		padding-left: g.$space_3l;
+		background: g.$color_main;
+		@include g.mq(md) {
+			width: 220px;
+		}
+		&--reset{
+			@extend .p-searchPanel__btn;
+			background: g.$color_base;
+			padding: g.$space_m g.$space_l g.$space_m g.$space_3l;
+			font-size: g.$font-size_m;
+		}	
+	}
+	&__accordion{
+		top: 35%;
+	}
+}

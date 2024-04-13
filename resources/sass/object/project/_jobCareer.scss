@@ -1,0 +1,18 @@
+@use "../../global" as g;
+
+.p-jobCareer{
+	&__titleText{
+		@include g.mq() {
+			flex: 0 0 140px;
+		}		
+	}
+	&__titleBtnArea{
+		@include g.mq() {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: end;
+			gap: g.$space_s;
+			flex: 1 1 auto;
+		}		
+	}
+}

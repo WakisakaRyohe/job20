@@ -1,0 +1,8 @@
+@use "../../global" as g;
+
+.p-topNewJobs{
+	padding: 80px 4%;
+	@include g.mq() {
+		padding: 50px 4%;
+	}
+}

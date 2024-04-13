@@ -1,0 +1,41 @@
+
+@use "../../global" as g;
+
+.c-badge{
+	display: inline-block;
+	border: none;
+	border-radius: 3px;
+	padding: 0 g.$space_s;
+	text-align: center;
+	vertical-align: middle;
+	background: g.$color-base;
+	// font-size: g.$font-size_m;
+	&--main{
+		@extend .c-badge;
+		color: #0b4;
+		border: 1px solid #0b4;
+	}
+	&--sub{
+		@extend .c-badge;
+		color: #e8a9ff;
+		border: 1px solid #e8a9ff;
+	}
+	&--carousel{
+		@extend .c-badge;
+		display: grid;
+ 		place-items: center;
+		padding: 0 g.$space_m;
+		color: g.$color_main;
+		border: 1px solid g.$color_main;
+	}
+	&--3rd{
+		@extend .c-badge;
+		color: #ffcc34;
+		border: 1px solid #ffcc34;
+	}	
+	&--4th{
+		@extend .c-badge;
+		color: #f99;
+		border: 1px solid #f99;
+	}	
+}

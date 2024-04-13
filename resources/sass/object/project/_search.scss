@@ -1,0 +1,36 @@
+@use "../../global" as g;
+
+.p-search{
+	// opacity: 0;
+	&__container{
+		display: flex;
+		gap: g.$space_xxl;
+		@include g.mq(md) {
+			flex-direction: column;
+		}
+	}
+	&__sideBar{
+		flex: 0 0 250px;
+	}
+	&__main{
+		flex: 1 1 auto;
+	}
+	&__attention{
+		margin-top: g.$space_m;
+		font-size: g.$font-size_s;
+		color: #888;
+		line-height: 1.2;
+	}
+	&__badgeArea{
+		margin-bottom: 0;
+		li{
+			max-width: none;
+		}
+	}
+	&__selectBox{
+		width: 120px;
+		&::after{
+			top: 12px;
+		}	
+	}
+}

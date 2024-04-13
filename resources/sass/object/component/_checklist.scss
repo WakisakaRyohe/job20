@@ -1,0 +1,23 @@
+@use "../../global" as g;
+
+.c-checkList{
+	margin: 0 auto;
+	&__item{
+		border: 3px solid g.$color-main;
+		border-radius: g.$space_s;
+		padding: g.$space_l;
+		margin-bottom: g.$space_l;
+		font-weight: bold;
+		font-size: g.$font-size_l;
+		@include g.mq() {
+		  font-size: g.$font-size_m;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__image{
+		display: inline-block;
+		margin-right: g.$space_m;
+	}
+}

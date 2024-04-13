@@ -1,0 +1,48 @@
+@use "../../global" as g;
+
+.c-selectBtn{
+	display: inline-block;
+	position: relative;
+	background: g.$color_base;
+	box-shadow: 0 3px g.$space_m rgba(0,0,0,0.1);
+	min-width: 120px;
+	padding: g.$space_s g.$space_m g.$space_s 25px;
+	border: 1px solid #e5e5e5;
+	border-radius: 3px;
+	font-size: g.$font-size_s;
+	color: #333;
+	@include g.mq() {
+		padding-left: g.$space_m;
+	}	
+	&:hover{
+		cursor: pointer;
+		opacity: .8;
+	}
+	&::before{
+		display: inline-block;
+		content: "+";
+		position: absolute;
+		top: 4px;
+		left: 7px;
+		font-size: g.$font-size_ll;
+		color: g.$color_main;
+		font-weight: bold;
+		@include g.mq() {
+			top: 5px;
+		}	
+	}
+	// バージョン違い
+	&--reset{
+		@extend .c-selectBtn;
+		width: 100%;
+		@include g.mq(md) {
+			display: block;
+			width: 220px;
+		}	
+		&::before{
+			content: "-";
+			left: -10px;
+		}
+	}
+}
+

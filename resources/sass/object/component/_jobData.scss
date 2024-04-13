@@ -1,0 +1,142 @@
+@use "../../global" as g;
+
+.c-jobData{
+	&__date{
+		margin-bottom: g.$space_m;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		color: #999;
+  		font-size: g.$font-size_ss;
+	}
+	&__photo{
+		width: 100%;
+		height: 200px;
+		margin-bottom: g.$space_m;
+		object-fit: cover;
+		object-position: 0 20%;
+		@include g.mq() {
+			max-height: 150px;
+		}	
+		&--carousel{
+			@extend .c-jobData__photo;
+			margin-bottom: 0;
+			border-radius: g.$space_s g.$space_s 0 0;
+			@include g.mq(md) {
+				height: auto;
+				max-height: 150px;
+			}	
+		}
+	}
+
+	&__jobName{
+		margin-bottom: g.$space_m;
+		line-height: 1.4;
+		font-weight: bold;
+		font-size: g.$font-size_ll;
+		color: #222;
+		@include g.mq() {
+			margin-bottom: g.$space_s;
+		}
+	}
+	&__companyArea{
+		display: flex;
+		align-items: center;
+		gap: g.$space_m;
+	}
+	&__companyName{
+		flex: 1 1 auto;
+		margin-bottom: g.$space_m;
+		font-weight: bold;
+		font-size: g.$font-size_s;
+		color: #666;
+		@include g.mq() {
+			margin-bottom: g.$space_s;
+		}
+	}
+	&__companyImg{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		flex: 0 0 30px;
+		height: 30px;
+		overflow: hidden;
+		border: 1px solid g.$color-border3rd;
+		border-radius: 100%;
+		img{
+			max-height: 100%;
+			max-width: none;
+		}
+	}
+	&__body{
+		padding: g.$space_l;
+	}
+
+	// バッジエリア
+	&__badgeArea{
+		margin-bottom: g.$space_xxl;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-wrap: wrap;
+		@include g.mq() {
+			margin-bottom: g.$space_xl;
+			gap: g.$space_s;
+		}
+	}
+	&__badgeWrap{
+		overflow: hidden;
+		@include g.mq(lg) {
+			max-width: 300px;
+		}
+		@include g.mq(md) {
+			max-width: 180px;
+		}
+	}
+	&__badgeItem{
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		display: inline-block;
+		position: relative;
+		font-size: g.$font-size_ss;
+		padding: 0 8px;
+		color: #666;
+		background: g.$color_base;
+		border: 1px solid #ccc;
+		border-radius: g.$space_s;
+		&--carousel{
+			@include g.mq(lg) {
+				max-width: 300px;
+			}
+			@include g.mq(md) {
+				max-width: 180px;
+			}	
+		}
+		&--employmentStatus{
+			@extend .c-jobData__badgeItem;
+			color: g.$color_base;
+			border: 1px solid g.$color_main;
+			background: g.$color_main;
+		}	
+		&--occupation{
+			@extend .c-jobData__badgeItem;
+			border: 1px solid #62cc40;
+		}	
+		&--industry{
+			@extend .c-jobData__badgeItem;
+			border: 1px solid #f99;
+		}	
+		&--prefecture{
+			@extend .c-jobData__badgeItem;
+			border: 1px solid #ffcc34;
+		}
+		&--commitment{
+			@extend .c-jobData__badgeItem;
+			border: 1px solid #e8a9ff;
+		}
+	}
+	&__badge{
+	}
+}

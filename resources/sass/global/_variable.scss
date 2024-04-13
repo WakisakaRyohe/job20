@@ -1,0 +1,73 @@
+// ──────────────────────────────
+// 配色
+// ──────────────────────────────
+$color-base: #fff;
+$color-main: #00c1ff;
+$color-sub: #85d8fb;
+$color-accent: #f90;
+$color-accent2: #FF5B59;
+$color-border: #ddd;
+$color-borderSub: #ccc;
+$color-border3rd: #eee;
+$color-bg: #d2f0fc;
+$color-bgSub: #fafafa;
+$color-grad: linear-gradient( to right, #53c5f8 0%, #85d8fb 100% );
+$color-gradSub: linear-gradient(to right, #ff774d 0%, #fcae5b 100%);
+$color-table: #f5f5f5;
+$color-text: #333;
+$color-textSub: #999;
+$color-valForm: rgb(255, 190, 190);
+$color-valText: rgb(255,0,0);
+
+// ──────────────────────────────
+// 余白
+// ──────────────────────────────
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+$space_4l: 60px;
+
+// ──────────────────────────────
+// フォント
+// ──────────────────────────────
+$font-size_ss: .8rem;
+$font-size_s: .9rem;
+$font-size_m: 1rem;
+$font-size_l: 1.1rem;
+$font-size_ll: 1.25rem;
+$font-size_xl: 1.5rem;
+$font-size_xxl: 1.75rem;
+$font-size_3l: 2rem;
+
+// ──────────────────────────────
+// 横幅
+// ──────────────────────────────
+$width-s: 640px;
+$width-m: 840px;
+$width-l: 1040px;
+$width-xl: 1240px;
+
+// ──────────────────────────────
+// 影
+// ──────────────────────────────
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+$box-shadow_sub: 0 2px 4px rgba(0,0,0,0.15);
+
+// ──────────────────────────────
+// breakpoint
+// ──────────────────────────────
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1040px)',
+  'xl': 'screen and (max-width: 1240px)',
+) !default;
+
+@mixin mq($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }

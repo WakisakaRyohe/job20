@@ -1,0 +1,33 @@
+@use "../../global" as g;
+
+.u-color-main{
+	color: g.$color-main;
+}
+.u-color-sub{
+	color: g.$color-sub;
+}
+.u-color-accent{
+	color: g.$color-accent;
+}
+.u-color-base{
+	color: g.$color-base;
+}
+.u-color-text{
+	color: g.$color-text;
+}
+.u-color-textSub{
+	color: g.$color-textSub;
+}
+
+.u-bgColor-main{
+	background-color: g.$color-bg;
+}
+.u-bgColor-Sub{
+	background-color: g.$color-bgSub;
+}
+.u-bgColor-grad{
+	background: g.$color-grad;
+}
+.u-bgColor-gradSub{
+	background: g.$color-gradSub;
+}

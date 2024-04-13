@@ -1,0 +1,364 @@
+@use "../global" as g;
+
+.l-header{
+	width: 100%;
+	padding: g.$space_l 0;
+	position: relative;
+	background: g.$color-base;
+	border-bottom: 1px solid #efefef;
+	@include g.mq(lg) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 2;
+	}
+	&__container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__logoArea{
+		font-weight: bold;
+		font-size: g.$font-size_ll;
+	}
+	&__title{
+		i{
+			margin-right: g.$space_m;
+			color: g.$color-main;
+		}
+	}
+	&__titleText{
+	}
+
+	// ログイン済みユーザーのメニューエリア
+	&__authLinkArea{
+		// 横スライドで出てくるメニュー
+		@include g.mq(lg) {
+			position: fixed;
+			top: 63px;
+			z-index: 1;
+			right: -50vw;
+			width: 50vw;
+			height: 100vh;
+			padding: g.$space_l;
+			background: g.$color-bg;
+			transition: .3s;
+		}
+		&.active {
+			transform: translateX(0);
+			@include g.mq(lg) {
+				transform: translateX(-50vw);
+			}
+		}
+	}
+
+	// 未ログインユーザーのメニューエリア
+	&__guestLinkArea{
+		@include g.mq(md) {
+			position: fixed;
+			top: 63px;
+			z-index: 1;
+			right: -50vw;
+			width: 50vw;
+			height: 100vh;
+			padding: g.$space_l;
+			background: g.$color-bg;
+			transition: .3s;
+		}	
+		&.active {
+			transform: translateX(0);
+			@include g.mq(md) {
+				transform: translateX(-50vw);
+			}
+		}	
+	}
+	
+	// メニューエリア共通
+	&__authLinkArea, &__guestLinkArea{
+		@include g.mq() {
+			width: 80vw;
+			padding: g.$space_l g.$space_l g.$space_l g.$space_xxl;
+			top: 59px;
+			right: -80vw;
+		}
+		&.active {
+			@include g.mq() {
+				transform: translateX(-80vw);
+			}
+		}
+	}
+	
+	// 横スライドで出てくるメニューの背景
+	&__bg{
+		display: none;
+		&.active {
+			@include g.mq(lg) {
+				display: block;
+				width: 100%;
+				height: 100%;	
+				position: fixed;
+				top: 63px;
+				left: 0;
+				background: rgba(0, 0, 0, 0.5);
+			}
+			@include g.mq() {
+				top: 59px;
+			}
+		}
+	}
+
+	// 通常メニュー一覧
+	&__menu{
+		display: flex;
+		align-items: center;
+		gap: g.$space_l;
+		@include g.mq(lg) {
+			flex-direction: column;
+			justify-content: start;
+			gap: 0;
+			border-radius: g.$space_s;
+			background: g.$color-base;
+		}
+		&--guest{
+			@extend .l-header__menu;
+			gap: g.$space_m;
+			@include g.mq(lg) {
+				flex-direction: row;
+			}	
+			@include g.mq(md) {
+				padding: g.$space_xl;
+				flex-direction: column;
+			}	
+		}
+	}
+
+	// メニュー個別
+	&__menuItem{
+		position: relative;
+		&.active {
+			&::before{
+				content: "";
+				position: absolute;
+				bottom: -19px;
+				display: block;
+				width: 100%;
+				height: 6px;
+				border-radius: g.$space_s;
+				background-color: g.$color-main;
+			}
+		}	
+		@include g.mq(lg) {
+			width: 100%;
+			border-bottom: 1px solid g.$color-border;
+			&.active{
+				background: #d6ebef;
+				color: g.$color-main;	
+				&::before{
+					content: none;
+				}
+			}		
+		}
+		&--guest{
+			&.active {
+				&::before{
+					content: none;
+				}
+			}
+			@include g.mq(md) {
+				width: 100%;
+			}	
+		}
+	}
+	&__link{
+		padding: g.$space_s 0;
+		color: #222;
+		font-weight: bold;
+		font-size: g.$font-size_s;
+		&:hover{
+			color: g.$color-accent;
+		}
+		i{
+			margin-right: g.$space_s;
+			font-size: g.$font-size_m;
+			color: g.$color-main;
+		}
+		@include g.mq(lg) {
+			display: block;
+			padding: g.$space_l g.$space_xxl g.$space_l g.$space_l;
+			position: relative;
+			&::after{
+				content: ">";
+				display: block;
+				position: absolute;
+				bottom: 13px;
+				right: 15px;
+				font-size: g.$font-size_m;
+				color: g.$color-main;
+			}
+			&.active{
+				color: g.$color-main;	
+			}
+		}
+		&--guest{
+			@extend .l-header__link;
+			display: inline-block;
+			width: 110px;
+			padding: 8px 0;
+			border-radius: g.$space_s;
+			background: g.$color-gradSub;
+			box-shadow: g.$box-shadow_sub;
+			color: g.$color-base;
+			text-align: center;
+			letter-spacing: 1px;
+			&:hover{
+				opacity: .8;
+				color: g.$color-base;
+			}	
+			i{
+				margin-right: g.$space_m;
+				color: g.$color-base;
+			}
+			@include g.mq(lg) {
+				&::after{
+					content: none;
+				}
+				&.active{
+					color: g.$color-base;	
+				}	
+			}
+			@include g.mq(md) {
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				padding: 0;
+			}
+			@include g.mq() {
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+		&--login{
+			@extend .l-header__link--guest;
+			padding: 7px 0;
+			background: g.$color-base;
+			border: 1px solid g.$color-main;
+			color: g.$color-main;
+			&:hover{
+				opacity: .8;
+				color: g.$color-main;
+			}	
+			i{
+				margin-right: g.$space_m;
+				color: g.$color-main;
+			}
+			@include g.mq(lg) {
+				&.active{
+					color: g.$color-main
+				}	
+			}
+			@include g.mq(md) {
+				padding: 0;
+			}
+		}
+	}
+	
+	// ハンバーガーメニュー
+	&__toggleArea{
+		display: none;
+		@include g.mq(lg) {
+			display: inline-block;
+			width: 30px;
+			height: 25px;
+			position: relative;
+			text-align: center;
+		}
+		@include g.mq() {
+			width: 25px;
+			height: 20px;
+		}
+		&--guest{
+			@extend .l-header__toggleArea;
+			@include g.mq(lg) {
+				display: none;
+			}
+			@include g.mq(md) {
+				display: inline-block;
+				width: 30px;
+				height: 25px;
+				position: relative;
+				text-align: center;
+			}
+			@include g.mq() {
+				width: 25px;
+				height: 20px;
+			}	
+		}
+	}
+	&__toggle{
+		&:hover{
+			cursor: pointer;
+		}
+		@include g.mq(lg) {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			transition: all .3s;
+			&.active &Item{
+				&:nth-of-type(1) {
+					transform: translateY(10px) rotate(-45deg);
+					@include g.mq() {
+						transform: translateY(7px) rotate(-45deg);
+					}
+				}
+				&:nth-of-type(2) {
+					opacity: 0;
+				}
+				&:nth-of-type(3) {
+					transform: translateY(-10px) rotate(45deg);
+					@include g.mq() {
+						transform: translateY(-9px) rotate(45deg);
+					}
+				}
+			}	
+		}
+	}
+	&__toggleItem{
+		display: inline-block;
+		transition: all .3s;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background: g.$color-main;
+		border-radius: 4px;
+		&:nth-of-type(1) {
+			top: 0;
+		}
+		&:nth-of-type(2) {
+			top: 45%;
+			@include g.mq() {
+				top: 40%;
+			}
+		}
+		&:nth-of-type(3) {
+			bottom: 0;
+		}
+	}
+	&__toggleText{
+		display: none;
+		@include g.mq(lg) {
+			display: block;
+			width: 40px;
+			position: absolute;
+			bottom: -17px;
+			left: -5px;
+			letter-spacing: 0;
+			font-size: 0.6rem;
+		}
+		@include g.mq() {
+			width: 35px;
+			bottom: -15px;
+		}
+	}
+}

@@ -1,0 +1,311 @@
+@use "../../global" as g;
+
+.p-bord{
+	padding-bottom: 0;
+	&__scroll{
+		height: 90px;
+	}
+	&__pageTitle{
+		margin-bottom: 0;
+		border-radius: g.$space_s g.$space_s 0 0;
+	}
+	&__navi{
+		margin-bottom: g.$space_xl;
+		padding: g.$space_m g.$space_xl;
+		text-align: end;
+		border-radius: 0 0 g.$space_s g.$space_s;
+		background: #fff;
+	}
+	&__jobLink{
+		font-size: g.$font-size_s;
+		font-weight: bold;
+		&:hover{
+			opacity: .8;
+		}
+		i{
+			color: g.$color_main;
+			font-size: g.$font-size_ll;
+			vertical-align: middle;
+		}
+		&::after{
+			content: '>';
+			margin-left: g.$space_s;
+		}
+	}
+
+	// メッセージ一覧
+	&__container{
+		border-radius: g.$space_s g.$space_s 0 0;
+		background: #fafafa;
+		font-size: g.$font-size_s;
+		@include g.mq() {
+			padding: g.$space_xl g.$space_xl g.$space_xxl g.$space_l;
+		}
+	}
+	&__messageList{
+		max-width: g.$width-m;
+		margin: 0 auto;
+		padding-right: g.$space_l;
+		@include g.mq() {
+			padding-right: 0;
+		}
+	}
+	// メッセージ内容
+	&__messageItem{
+		position: relative;
+		display: flex;
+		gap: g.$space_xxl;
+		justify-content: end;
+		align-items: start;
+		height: auto;
+		margin-bottom: g.$space_xxl;
+		@include g.mq(md) {
+			margin-bottom: 50px;
+			gap: 25px;
+		}
+		&--company{
+			@extend .p-bord__messageItem;
+			margin-bottom: g.$space_3l;
+			justify-content: start;
+			@include g.mq(md) {
+				margin-bottom: 50px;
+			}	
+			@include g.mq() {
+				gap: g.$space_l;
+			}
+		}
+	}
+
+	// 自分のメッセージ
+	&__messageUnit{
+		position: relative;
+		max-width: 70%;
+		min-width: 30%;
+		padding: g.$space_xl;
+		background: #e8e8e8;
+		border: g.$color-border3rd;
+		border-radius: g.$space_l;
+		box-shadow: g.$box-shadow_sub;
+		@include g.mq(md) {
+			max-width: 80%;
+			min-width: 40%;
+		}
+		@include g.mq() {
+			padding: g.$space_l;
+			max-width: 95%;
+			min-width: 50%;
+		}
+		&::before, &::after{
+			content: "";
+			display: block;
+			position: absolute;
+		}
+		&::before{
+			top: 10px;
+			right: -29px;
+			z-index: 1;
+			border-left: 15px solid #e8e8e8;
+			border-right: 15px solid transparent;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;	
+		}
+		&::after{
+			top: 8px;
+			right: -30px;
+			border-left: 15px solid g.$color-border3rd;
+			border-right: 15px solid transparent;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+		}
+		@include g.mq() {
+			&::before{
+				top: 15px;
+				right: -14px;
+				border-left: 7px solid #e8e8e8;
+				border-right: 7px solid transparent;
+				border-top: 4px solid transparent;
+				border-bottom: 4px solid transparent;
+			}	
+			&::after{
+				top: 14px;
+				right: -18px;
+				border-left: 9px solid g.$color-border3rd;
+				border-right: 9px solid transparent;
+				border-top: 5px solid transparent;
+				border-bottom: 5px solid transparent;
+			}
+		}
+		// 最初のメッセージ
+		&--first{
+			@extend .p-bord__messageUnit;
+			background: g.$color-main;
+			&::before{
+				border-left: 15px solid g.$color-main;
+			}	
+			@include g.mq() {
+				&::before{
+					border-left: 10px solid g.$color-main;
+				}	
+			}	
+		}
+		// 会社のメッセージ
+		&--company{
+			@extend .p-bord__messageUnit;
+			background: g.$color-base;
+			&::before, &::after{
+				right: auto;
+				left: -30px;
+				border-left: 15px solid transparent;
+			}	
+			&::before{
+				top: 30px;
+				border-right: 15px solid g.$color-base;
+			}	
+			&::after{
+				top: 28px;
+				left: -32px;
+				border-right: 17px solid g.$color-border3rd;
+			}
+			@include g.mq(md) {
+				&::before{
+					top: 20px;
+				}	
+				&::after{
+					top: 18px;
+				}
+			}		
+			@include g.mq() {
+				&::before{
+					left: -14px;
+					border-left: 7px solid transparent;
+					border-right: 7px solid g.$color-base;
+				}	
+				&::after{
+					left: -18px;
+					border-left: 9px solid transparent;
+					border-right: 9px solid g.$color-border3rd;
+				}
+			}		
+		}
+	}
+
+	// 画像
+	&__imgCell{
+	}
+	&__img{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 80px;
+		height: 80px;
+		overflow: hidden;
+		border: 1px solid g.$color-border3rd;
+		border-radius: 100%;
+		@include g.mq(md) {
+			width: 60px;
+			height: 60px;
+		}
+		@include g.mq() {
+			width: 40px;
+			height: 40px;
+		}
+		img{
+			max-height: 100%;
+			max-width: none;
+		}
+	}
+
+	// 日付
+	&__date{
+		position: absolute;
+		bottom: 0;
+		left: -50px;
+		font-size: 0.7rem;
+		color: #666;
+		@include g.mq(md) {
+			left: auto;
+			right: 10px;
+			bottom: -23px;
+		}
+		&--company{
+			@extend .p-bord__date;
+			right: -50px;
+			left: auto;
+			@include g.mq(md) {
+				left: 10px;
+				right: auto;
+			}	
+		}
+	}
+	&__messageValue{
+		word-break: break-all;
+		white-space: pre-line;	
+		&--first{
+			color: g.$color-base;
+			font-weight: bold;
+		}
+	}
+
+	// メッセージ投稿フォーム
+	&__form{
+		height: auto;
+  		display: flex;
+		align-items: center;
+		justify-content: center;  
+		gap: g.$space_l;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: g.$space_l;
+		border-top: 1px solid #ddd;
+		background: g.$color-base;
+		z-index: 4;
+	}
+	&__formCell{
+		width: 650px;
+		@include g.mq(md) {
+			width: 100%;
+		}
+	}
+	&__textArea{
+		width: 100%;
+		max-height: 400px;
+		padding: g.$space_m g.$space_l;
+		vertical-align: middle;
+		background: g.$color-border3rd;
+		border: none;
+		border-radius: g.$space_m;
+		font-size: g.$font-size_s;
+		overflow: auto;
+		@include g.mq() {
+			max-height: 300px;
+		}
+	}
+	&__btnCell{
+	}
+	&__btn{
+		display: grid;
+		place-items: center;
+		width: 50px;
+		height: 50px;
+		vertical-align: middle;
+		border-radius: 50%;
+		border: none;
+		background: #333;
+		pointer-events: none;
+		@include g.mq() {
+			width: 40px;
+			height: 40px;
+		}
+		&:hover{
+			cursor: pointer;
+			opacity: .8;
+		}
+		i{
+			font-size: g.$font-size_xl;
+			color: g.$color-base;	
+		}
+	}
+}

@@ -1,0 +1,14 @@
+@use "../../global" as g;
+
+.c-checkmark{
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	margin-top: -10px;
+	font-size: g.$font-size_m;
+	color: g.$color-main;
+	@include g.mq() {
+		margin-top: -8px;
+		left: 4px;
+	}
+}

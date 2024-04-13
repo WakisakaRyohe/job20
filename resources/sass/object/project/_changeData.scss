@@ -1,0 +1,37 @@
+@use "../../global" as g;
+
+.p-changeData{
+	dl{
+		padding-top: 0;
+		border: none;
+	}
+	&__card{
+		margin: 0 auto g.$space_xxl;
+		border: 1px solid g.$color-border;
+		border-radius: 10px;
+		padding: g.$space_xxl;
+		@include g.mq(md) {
+			width: 100%;
+		}
+		@include g.mq() {
+			padding: g.$space_3l g.$space_l;
+		}	
+	}
+	&__catch{
+		color: #EE4422;
+		text-align: center;
+		font-size: g.$font-size_l;
+		font-weight: bold;
+		font-feature-settings: "palt";
+	}
+	&__copy{
+		margin-top: g.$space_m;
+		text-align: center;
+	}
+	&__link{
+		display: block;
+		color: g.$color-main;
+		text-align: center;
+		text-decoration: underline;
+	}
+}

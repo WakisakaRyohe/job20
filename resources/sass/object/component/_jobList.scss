@@ -1,0 +1,157 @@
+@use "../../global" as g;
+
+.c-jobList{
+	margin-bottom: g.$space_3l;
+	&__unit{
+		background: g.$color_base;
+		border-radius: g.$space_m;
+		box-shadow: 0 8px 13px 2px rgba(39,167,219, .05);
+	}
+	&__base{
+		padding: g.$space_xl;
+	}
+	&__jobNameArea{
+		position: relative;
+		background: #f9f9f9;
+		border-bottom: 1px solid g.$color-borderSub;
+		border-radius: g.$space_m g.$space_m 0 0;
+		&::after{
+			content: "";
+			display: block;
+			width: g.$space_xl;
+			height: g.$space_xl;
+			margin-top: -5px;
+			position: absolute;
+			right: g.$space_xl;
+			top: 50%;
+			border-top: 3px solid #ccc;
+			border-right: 3px solid #ccc;
+			transform: rotate(45deg);
+			@include g.mq() {
+				width: g.$space_l;
+				height: g.$space_l;
+				right: g.$space_l;
+			}	
+		}
+	}
+	&__link{
+		display: block;
+		position: relative;
+		padding: g.$space_xl g.$space_3l g.$space_xl g.$space_xl;
+		&:hover{
+			opacity: .8;
+		}
+		@include g.mq() {
+			padding: g.$space_xl g.$space_xxl g.$space_xl g.$space_xl;
+		}
+	}
+	&__photoArea{
+		width: 100%;
+		height: auto;
+		max-height: 300px;
+		margin-bottom: g.$space_xl;
+		overflow: hidden;
+	}
+	&__photoLink{
+		&:hover{
+			opacity: .8;
+		}
+	}
+	&__photo{
+		width: 100%;
+		max-height: 300px;
+		object-fit: cover;
+		object-position: 0 20%;
+	}
+	&__dataList{
+		margin-bottom: g.$space_xl;
+	}
+	&__data{
+		display: table;
+		width: 100%;
+		border-top: 1px solid g.$color-borderSub;
+		&:last-child{
+			border-bottom: 1px solid g.$color-borderSub;
+		}
+	}
+	&__item{
+		display: table-cell;
+		position: relative;
+		vertical-align: middle;
+		width: 70px;
+		font-size: g.$font-size_ss;
+		color: #777;
+		text-align: center;
+		@include g.mq() {
+			width: 50px;
+		}
+	}
+	&__icon{
+		display: block;
+		padding: 43px 0 g.$space_m 0;
+		position: relative;
+		&::before{
+			content: "";
+			display: inline-block;
+			position: absolute;
+			top: g.$space_m;
+			left: calc(50% - 15px);
+			width: 25px;
+			height: 25px;
+			border-radius: 30px;
+			background: #00c1ff;
+		}
+		i{
+			position: absolute;
+			top: 15px;
+			left: 25px;
+			font-size: g.$font-size_m;
+			color: g.$color-base;
+			@include g.mq() {
+				top: 16px;
+				left: 16px;
+			}	
+		}
+	}
+	&__text{
+		display: table-cell;
+		padding: 13px 0 13px g.$space_m;
+		font-size: g.$font-size_s;
+		line-height: 1.4;
+		@include g.mq() {
+			margin-left: g.$space_s;
+		}
+	}
+
+	// ボタンエリア
+	&__btnArea{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: g.$space_xl;
+		@include g.mq() {
+			gap: g.$space_m;
+		}
+	}
+	&__btn{
+		width: 260px;
+		height: 50px;
+		@include g.mq(lg) {
+			width: 180px;
+		}
+		@include g.mq(md) {
+			width: 260px;
+		}
+		&--detail{
+			@extend .c-jobList__btn;
+			padding: 13px;
+			font-size: g.$font-size_s;
+			border: 1px solid #e0e0e0;
+			background: #fafafa;
+			color: g.$color-main;
+			@include g.mq() {
+				min-width: 80px
+			}	
+		}
+	}
+}

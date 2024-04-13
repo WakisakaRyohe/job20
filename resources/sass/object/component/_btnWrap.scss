@@ -1,0 +1,20 @@
+@use "../../global" as g;
+
+.c-btnWrap{
+	display: inline-block;
+	position: relative;
+	&::after{
+		content: '>';
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: calc(50% - 10px);
+		right: 10px;
+		font-size: g.$font-size_m;
+		color: g.$color-base;
+	}
+}
+

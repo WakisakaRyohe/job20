@@ -1,0 +1,297 @@
+@use "../../global" as g;
+
+.p-bookmarkJobs{
+	// 気になる求人数
+	&__searchNaviArea{
+		margin-bottom: g.$space_xl;
+		padding: 0;
+		border: none;
+		@include g.mq(md) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: g.$space_s;
+		}
+		@include g.mq() {
+			flex-direction: column;
+			align-items: center;
+			gap: g.$space_m;
+		}
+	}
+	&__counter{
+		margin-bottom: 0;
+		color: #666;
+	}
+	&__totalNum{
+		color: g.$color_accent;
+	}
+
+	// 並べ替え
+	&__sortArea{
+		display: flex;
+		align-items: center;
+		gap: g.$space_s;
+	}
+	&__selectBox{
+		width: 130px;
+		&::after{
+			top: 12px;
+		}
+	}
+
+	&__item{
+		position: relative;
+		margin-bottom: g.$space_xl;
+		background: g.$color_base;
+		border: 1px solid g.$color_border;
+		border-top: 3px solid g.$color_main;
+		border-radius: g.$space_s;
+	}
+	&__unit{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: g.$space_l;
+		padding: g.$space_l;
+		@include g.mq(md) {
+			flex-direction: column;
+		}
+	}
+	&__subUnit{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: g.$space_l;
+		@include g.mq() {
+			flex-direction: column;
+		}
+	}
+	&__subUnit{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: g.$space_l;
+		@include g.mq() {
+			flex-direction: column;
+		}
+	}
+
+	// 画像エリア
+	&__photo{
+		flex: 0 0 100px;
+		align-self: self-start;
+		img{
+			aspect-ratio: 3 / 2;
+			object-fit:cover;
+			border-radius: g.$space_s;
+			&:hover{
+				opacity: .8;
+			}
+		}	
+		@include g.mq() {
+			flex: 0;
+		}
+	}
+
+	// 求人情報エリア
+	&__nameSet{
+		flex: 1 1 auto;
+	}
+	&__jobName, &__catch{
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-break: break-all;
+	}
+	&__jobName{
+		margin-bottom: g.$space_s;
+		font-weight: bold;
+		color: g.$color_main;
+		-webkit-line-clamp: 4;
+		&:hover{
+			opacity: .8;
+		}
+	}
+	&__company{
+		margin-bottom: g.$space_m;
+		font-size: g.$font-size_s;
+		font-weight: bold;
+   		color: #666;
+	}
+	&__catch{
+		font-size: g.$font-size_s;
+		font-weight: bold;
+   		color: g.$color_accent;
+		-webkit-line-clamp: 2;
+	}
+
+	// ボタンエリア
+	&__buttonSet{
+		flex: 0 0 320px;
+		@include g.mq(md) {
+			flex: 0;
+			width: 100%;
+		}
+		&--changeFlex{
+			@extend .p-bookmarkJobs__buttonSet;
+			flex: 0 0 180px;
+			@include g.mq(md) {
+				flex: 0;
+			}
+		}
+	}
+	&__buttonBase{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #fff6f6;
+		border: 1px solid #fff2f2;
+		border-radius: g.$space_s;
+		box-shadow: g.$box-shadow_sub;
+		&--changeDisplay{
+			@extend .p-bookmarkJobs__buttonBase;
+			@include g.mq(md) {
+				display: flex;
+			}
+		}	
+	}
+	&__buttonArea{
+		padding: g.$space_xl g.$space_l;
+		flex: 0 0 180px;
+		@include g.mq() {
+			flex: none;
+			padding: g.$space_l 0;
+		}
+	}
+	&__count{
+		flex: 1 1 auto;
+		position: relative;
+		padding: 13px g.$space_l;
+		padding-right: g.$space_xxl;
+		text-align: center;
+		@include g.mq(md) {
+			flex: none;
+		}
+		@include g.mq() {
+			padding-left: 0;
+		}
+		&::after{
+			content: '\f054';
+			font-weight: 900;
+			font-family: "Font Awesome 6 Free";
+			font-size: g.$font-size_xl;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: calc(50% - 10px);
+			right: 3px;
+			color: #f90;
+		}
+	}
+	&__countItem, &__countDate{
+		letter-spacing: 0;
+		font-feature-settings: "palt";
+		font-weight: bold;
+		font-size: g.$font-size_s;
+	}
+	&__countItem{
+		margin-bottom: -5px;
+	}
+	&__countDate{
+		text-align: center;
+	}
+	&__countNum{
+		display: inline-block;
+		margin-right: 3px;
+		color: #f66;
+		font-size: g.$font-size_xl;
+	}
+	&__btn{
+		width: 150px;
+		@include g.mq() {
+			width: 100px;
+		}
+	}
+	&__deleteIcon{
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+		padding: 0;
+		position: absolute;
+		z-index: 1;
+		top: 5px;
+		right: 5px;
+		border-radius: 50%;
+		border: 1px solid g.$color_border;
+		background: g.$color_border;
+		color: g.$color_base;
+		font-size: g.$font-size_xl;
+	}
+
+	// 日付表示エリア
+	&__termArea{
+		border-top: 1px solid g.$color_border;
+		font-size: g.$font-size_ss;
+		color: #999;
+	}
+	&__termUnit{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: g.$space_m g.$space_l;
+	}
+	&__dateArea{
+		display: flex;
+		align-items: center;
+	}
+	&__deadline{
+		@include g.mq() {
+			display: inline-block;
+			margin-bottom: g.$space_s;
+		}
+	}
+	&__delete{
+		cursor: pointer;
+		a{
+			color: #999;
+			&:hover{
+				color: g.$color_accent;
+			}	
+		}
+		i{
+			margin-right: g.$space_s;
+		}
+	}
+
+	// 削除アラート
+	&__deleteAlert{
+		padding: g.$space_m;
+		text-align: center;
+		border-top: 1px solid g.$color_border;
+		background: #f3f3f3;
+		color: #666;
+		overflow: hidden;
+		transition: .2s ease-in-out;	
+	}
+	&__alertText{
+		margin-bottom: g.$space_m;
+		font-size: g.$font-size_s;
+	}
+	&__okButton{
+		width: 100px;
+		display: inline-block;
+		margin-right: g.$space_l;
+		padding: 2px 0;
+		background: g.$color_base;
+		border: 1px solid #ccc;
+		font-size: g.$font-size_ss;
+		border-radius: g.$space_s;
+	}
+	&__noButton{
+		@extend .p-bookmarkJobs__okButton;
+		margin-right: 0;
+	}
+}

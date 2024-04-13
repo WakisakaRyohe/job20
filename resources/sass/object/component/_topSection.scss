@@ -1,0 +1,89 @@
+@use "../../global" as g;
+
+.c-topSection{
+	padding: 80px g.$space_xl;
+	background: g.$color-base;
+	@include g.mq() {
+		padding: 50px 4%;
+	}
+	&__container{
+		max-width: 1040px;
+		margin: 0 auto;
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	&__titleArea{
+		margin-bottom: 50px;
+		text-align: center;
+		@include g.mq() {
+			margin-bottom: 30px;
+		}	
+	}
+	&__titleText{
+		display: inline-block;
+		font-weight: bold;
+		font-size: g.$font-size_xxl;
+		&--ornament{
+			@extend .c-topSection__titleText;
+			position: relative;
+			padding: 0 g.$space_xl;
+			@include g.mq(md) {
+				padding: 0 g.$space_m;
+			}			
+			&::before, &::after{
+				content: '';
+				display: inline-block;
+				width: 100px;
+				height: 10px;
+				position: absolute;
+				top: calc(50% - 5px);
+				border-top: 1px solid #333;
+				border-bottom: 1px solid #333;
+				@include g.mq(md) {
+					width: 80px;
+				}			
+				@include g.mq() {
+					display: none;
+				}			
+			}
+			&::before{
+				left: -100px;
+				@include g.mq(md) {
+					left: -80px;
+				}			
+			}
+			&::after{
+				right: -100px;
+				@include g.mq(md) {
+					right: -80px;
+				}			
+			}
+		}
+	}
+	&__cards{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: g.$space_xl;
+		@include g.mq(md) {
+			flex-direction: column;
+		}
+	}
+	&__card{
+		opacity: 0;
+		transform: translateY(200px);
+		@include g.mq(md) {
+			transform: translateY(0);
+			transform: translateX(-200px);
+		}
+	}
+	// バージョン違い
+	&--bgMain{
+		@extend .c-topSection;
+		background-color: g.$color-bg;
+	}
+	&--bgSub{
+		@extend .c-topSection;
+		background-color: g.$color-bgSub;
+	}
+}

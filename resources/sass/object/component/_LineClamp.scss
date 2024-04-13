@@ -1,0 +1,66 @@
+@use "../../global" as g;
+
+.c-lineClamp{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    &--line1or2{
+        @extend .c-lineClamp;
+        -webkit-line-clamp: 1;
+        @include g.mq(lg) {
+            -webkit-line-clamp: 2;
+        }	
+        @include g.mq(md) {
+            -webkit-line-clamp: 1;
+        }	
+        @include g.mq() {
+            -webkit-line-clamp: 2;
+        }	
+    }
+    &--line2or3{
+        @extend .c-lineClamp;
+        -webkit-line-clamp: 2;
+        @include g.mq(lg) {
+            -webkit-line-clamp: 3;
+        }	
+        @include g.mq(md) {
+            -webkit-line-clamp: 2;
+        }	
+        @include g.mq() {
+            -webkit-line-clamp: 3;
+        }	
+    }
+    &--line3or4{
+        @extend .c-lineClamp;
+        -webkit-line-clamp: 3;
+        @include g.mq(lg) {
+            -webkit-line-clamp: 4;
+        }	
+        @include g.mq(md) {
+            -webkit-line-clamp: 3;
+        }	
+        @include g.mq() {
+            -webkit-line-clamp: 4;
+        }	
+    }
+    &--line1to2{
+        @extend .c-lineClamp;
+        -webkit-line-clamp: 1;
+        @include g.mq(md) {
+            -webkit-line-clamp: 2;
+        }
+    }
+    &--line2to3{
+        @extend .c-lineClamp;
+        -webkit-line-clamp: 2;
+        @include g.mq(md) {
+            -webkit-line-clamp: 3;
+        }
+    }
+    &--line1{
+        @extend .c-lineClamp;
+        -webkit-line-clamp: 1;
+    }
+}

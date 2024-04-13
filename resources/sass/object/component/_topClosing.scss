@@ -1,0 +1,80 @@
+@use "../../global" as g;
+
+.c-topClosing{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: g.$space_l 4%;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.3);
+	&--hidden{
+		@extend .c-topClosing;
+		opacity: 0;
+		transform: translateY(100%);
+		transition: all .5s;
+	}
+	&__btn{
+		display: inline-block;
+		padding: g.$space_m 50px g.$space_m g.$space_xxl;
+		position: relative;
+		text-align: center;
+		text-shadow: none;
+		border-radius: g.$space_m;
+		box-shadow: g.$box-shadow;
+		background: g.$color-gradSub;
+		color: g.$color-base;
+		font-weight: bold;
+		font-size: g.$font-size_ll;
+		@include g.mq() {
+			font-size: g.$font-size_l;
+		}
+		&:hover{
+			background: #f8ba46;
+		}
+		&::after{
+			content: '>';
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 20px;
+			height: 20px;
+			position: absolute	;
+			top: calc(50% - 10px);
+			right: 10px;
+			border-radius: 50%;
+			background: g.$color-base;
+			font-size: g.$font-size_s;
+			color: g.$color-accent;
+		}
+		&--circle{
+			@extend .c-topClosing__btn;
+			@include g.mq(md) {
+				width: 130px;
+				height: 130px;
+				margin-bottom: 120px;
+				padding: g.$space_s;
+				border: 2px solid rgb(255, 212, 132);
+				border-radius: 50%;
+				opacity: 0;
+				transform: translateX(-50px);
+				transition: .3s;
+				&::after{
+					top: auto;
+					right: auto;	
+					left: calc(50% - 10px);
+					bottom: g.$space_m;	
+				}		
+				&:hover{
+					transform: scale(1.05);
+					transition: transform .3s;
+				}	
+			}
+		}
+	}
+	&__btnText{
+		@include g.mq(md) {
+			line-height: 1.3;
+		}	
+	}
+}

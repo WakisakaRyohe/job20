@@ -1,0 +1,3 @@
+/* globalフォルダの_index.html 読み込み箇所*/
+//globalフォルダは他ファイルから読み込まれるため、@forwardを使う
+@forward "variable";

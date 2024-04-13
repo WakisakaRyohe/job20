@@ -1,0 +1,7 @@
+@use "../../global" as g;
+
+.p-webResume{
+	&__sectionContainer{
+		border-top: none;
+	}
+}

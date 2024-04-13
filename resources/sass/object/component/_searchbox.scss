@@ -1,0 +1,45 @@
+@use "../../global" as g;
+
+.c-searchBox{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: g.$space_m;
+	padding: g.$space_l;
+	border-radius: 50px;
+	background: g.$color-base;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+	@include g.mq() {
+		padding: g.$space_m;
+	}
+	&--s{
+		@extend .c-searchBox;
+		width: 200px;
+		margin: 0 auto;
+		justify-content: center;
+		border-radius: g.$space_s;
+	}
+	&:hover{
+		background: rgb(250, 250, 250);
+	}
+	&__ruleWrap{
+		flex: 1 1 auto;
+		overflow: hidden;
+	}
+	&__rule{
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		text-align: center;
+	}
+	&__text{
+		flex: 0 0 5.5rem;
+		text-align: right;
+		font-weight: bold;
+		color: g.$color-main;
+		i{
+			font-size: g.$font-size_l;
+		}
+	}
+}
