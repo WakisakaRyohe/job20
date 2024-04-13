@@ -62,3 +62,4 @@
 	<li>サーバOS : Linux(CentOS)</li>
 	<li>FW/ツール等 : Vue 2.7、Laravel 5.8、AWS、GitHub</li>
 </ul>
+# job20
