@@ -1,7 +1,7 @@
 <h1>サイト名 : ジョブインフォ20 (20代向け転職サイト)</h1>
 
 <p align="center">
-    <a href="https://wakisakaryohei.com/job20/" target="_blank" rel="noopener noreferrer"><img src="https://github.com/WakisakaRyohe/job_change_20/assets/135797818/512d84e8-12a0-4b5b-bffa-1c415f11a2e8"  width="400"></a><br>
+    <a href="https://wakisakaryohei.com/job20/" target="_blank" rel="noopener noreferrer"><img src="https://github.com/WakisakaRyohe/job20/assets/135797818/030b7f7b-01da-4f53-8ff9-2b23ce701b84"  width="500"></a><br>
     URL: <a href="https://wakisakaryohei.com/job20/" target="_blank" rel="noopener noreferrer">https://wakisakaryohei.com/job20/</a>
 </p>
     
