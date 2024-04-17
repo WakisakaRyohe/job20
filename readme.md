@@ -57,9 +57,9 @@
 
 <h2>●利用技術</h2>
 <ul>
-	<li>言語 : HTML、CSS、JavaScript、PHP 7.4</li>
-	<li>DB : MySQL</li>
+	<li>言語 : HTML、CSS(Sass: FLOCSS)、JavaScript、PHP 7.4</li>
+	<li>インフラ : AWS (EC2、ELB、RDS、S3、CloudFront、SES)</li>
+    <li>データベース : MySQL</li>
 	<li>サーバOS : Linux(CentOS)</li>
-	<li>FW/ツール等 : Vue 2.7、Laravel 5.8、AWS、GitHub</li>
+	<li>FW/ツール等 : Vue 2.7、Laravel 5.8、GitHub</li>
 </ul>
-# job20
