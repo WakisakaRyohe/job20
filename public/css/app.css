@@ -1676,8 +1676,13 @@ select {
 
 @media screen and (max-width: 768px) {
   .c-jobData__photo--carousel {
-    height: auto;
     max-height: 150px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .c-jobData__photo--carousel {
+    height: 150px;
   }
 }
 
@@ -6193,21 +6198,21 @@ select {
 }
 
 .p-topFaq__card {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   transform: translateY(0);
   transform: translateX(-200px);
 }
 
-.p-topFaq__accordion {
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  border-left: none;
-}
-
 @media screen and (max-width: 414px) {
-  .p-topFaq__accordion {
+  .p-topFaq__card {
     margin-bottom: 15px;
   }
+}
+
+.p-topFaq__accordion {
+  border-left: none;
 }
 
 .p-topFaq__toggle {
@@ -6216,7 +6221,6 @@ select {
   align-items: center;
   gap: 20px;
   flex: 1 1 auto;
-  border-bottom: 1px solid #ccc;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -6255,6 +6259,8 @@ select {
   gap: 20px;
   padding: 20px;
   background-color: #fafafa;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 10px 10px;
 }
 
 @media screen and (max-width: 414px) {

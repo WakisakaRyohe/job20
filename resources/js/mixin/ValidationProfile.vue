@@ -191,7 +191,8 @@ export default {
 				this.errors.zip = [];
 
 				// 正規表現パターンを定義
-				const regex = /^0[0-9]{1}[1-7]{1}[0-9]{4}$/;
+				const regex = /\d{3}-?\d{4}/;
+				// const regex = /^0[0-9]{1}[1-7]{1}[0-9]{4}$/;
 
 				// 郵便番号がある場合
 				if(this.zip){
@@ -283,7 +284,8 @@ export default {
 					this.errors.tel = [];
 
 				// 正規表現パターンを定義
-				const regex = /^0[1-9]{1}[0-9]{1}[0-9]{7,8}$/;
+				const regex = /^[0-9]{10,11}$/;
+				// const regex = /^0[1-9]{1}[0-9]{1}[0-9]{7,8}$/;
 
 
 				// 電話番号がある場合

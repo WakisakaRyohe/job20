@@ -2148,7 +2148,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.isResetSlide = false;
         _this.isDisableClick = false;
       }, 400);
-      this.resetInterval();
+
+      // this.resetInterval();
     },
     //左に動く処理
     prev: function prev() {
@@ -2169,7 +2170,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.isResetSlide = false;
         _this2.isDisableClick = false;
       }, 400);
-      this.resetInterval();
+
+      // this.resetInterval();
     },
     // ページャーのクリック
     move: function move(num) {
@@ -2180,7 +2182,8 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         _this3.isDisableClick = false;
       }, 400);
-      this.resetInterval();
+
+      // this.resetInterval();
     },
     resetInterval: function resetInterval() {
       // ５秒ごとにスライドするイベント削除して再開
@@ -2253,7 +2256,7 @@ __webpack_require__.r(__webpack_exports__);
     this.jobArray = last2Jobs.concat(copyArray, head2Jobs);
 
     // ５秒ごとにスライド
-    this.timerId = setInterval(this.next, 5000);
+    // this.timerId = setInterval(this.next, 5000);
 
     // 画面幅を取得するイベントを設定
     window.addEventListener('resize', this.handleResize);
@@ -16682,7 +16685,8 @@ __webpack_require__.r(__webpack_exports__);
         this.errors.zip = [];
 
         // 正規表現パターンを定義
-        var regex = /^0[0-9]{1}[1-7]{1}[0-9]{4}$/;
+        var regex = /\d{3}-?\d{4}/;
+        // const regex = /^0[0-9]{1}[1-7]{1}[0-9]{4}$/;
 
         // 郵便番号がある場合
         if (this.zip) {
@@ -16770,7 +16774,8 @@ __webpack_require__.r(__webpack_exports__);
         this.errors.tel = [];
 
         // 正規表現パターンを定義
-        var regex = /^0[1-9]{1}[0-9]{1}[0-9]{7,8}$/;
+        var regex = /^[0-9]{10,11}$/;
+        // const regex = /^0[1-9]{1}[0-9]{1}[0-9]{7,8}$/;
 
         // 電話番号がある場合
         if (this.tel) {

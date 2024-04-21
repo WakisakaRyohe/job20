@@ -1,7 +1,7 @@
 <h1>サイト名 : ジョブインフォ20 (20代向け転職サイト)</h1>
 
 <p align="center">
-    <a href="https://wakisakaryohei.com/job20/" target="_blank" rel="noopener noreferrer"><img src="https://github.com/WakisakaRyohe/job20/assets/135797818/030b7f7b-01da-4f53-8ff9-2b23ce701b84"  width="500"></a><br>
+    <a href="https://wakisakaryohei.com/job20/" target="_blank" rel="noopener noreferrer"><img src="https://github.com/WakisakaRyohe/job_change_20/assets/135797818/512d84e8-12a0-4b5b-bffa-1c415f11a2e8"  width="400"></a><br>
     URL: <a href="https://wakisakaryohei.com/job20/" target="_blank" rel="noopener noreferrer">https://wakisakaryohei.com/job20/</a>
 </p>
     
@@ -57,9 +57,9 @@
 
 <h2>●利用技術</h2>
 <ul>
-	<li>言語 : HTML、CSS(Sass: FLOCSS)、JavaScript、PHP 7.4</li>
-	<li>インフラ : AWS (EC2、ELB、RDS、S3、CloudFront、SES)</li>
-    <li>データベース : MySQL</li>
+	<li>言語 : HTML、CSS、JavaScript、PHP 7.4</li>
+	<li>DB : MySQL</li>
 	<li>サーバOS : Linux(CentOS)</li>
-	<li>FW/ツール等 : Vue 2.7、Laravel 5.8、GitHub</li>
+	<li>FW/ツール等 : Vue 2.7、Laravel 5.8、AWS、GitHub</li>
 </ul>
+# job20

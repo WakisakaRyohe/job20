@@ -89,7 +89,7 @@ class BookmarkController extends Controller
             Log::info('気になる削除処理開始。対象アクション：' . __METHOD__);
 
             $user = Auth::user();
-            $user->storeBookmarkJobs()->detach($id);
+            $user->bookmarkJobs()->detach($id);
 
             // 気になる削除確認(戻り値は true, false)
             $bookmarkDestroy = !($user->isBookmark($id));  

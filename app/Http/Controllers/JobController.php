@@ -155,7 +155,7 @@ class JobController extends Controller
                     // 気になる登録があれば削除
                     if($isBookmark){
                         Log::info('気になる登録を削除します。'); 
-                        $user->storeBookmarkJobs()->detach($id);
+                        $user->bookmarkJobs()->detach($id);
 
                         // 気になる削除確認(戻り値は true, false)
                         $bookmarkDestroy = !($user->isBookmark($id));  

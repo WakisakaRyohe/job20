@@ -23,8 +23,10 @@
 			margin-bottom: 0;
 			border-radius: g.$space_s g.$space_s 0 0;
 			@include g.mq(md) {
-				height: auto;
 				max-height: 150px;
+			}	
+			@include g.mq() {
+				height: 150px;
 			}	
 		}
 	}

@@ -18,17 +18,17 @@
 		display: block;
 	}
 	&__card{
-		transform: translateY(0);
-		transform: translateX(-200px);
-	}
-	&__accordion{
 		margin-bottom: g.$space_xl;
 		border: 1px solid g.$color_borderSub;
 		border-radius: g.$space_m;
-		border-left: none;
+		transform: translateY(0);
+		transform: translateX(-200px);
 		@include g.mq() {
 			margin-bottom: g.$space_l;
 		}
+	}
+	&__accordion{
+		border-left: none;
 	}
 	&__toggle{
 		padding: g.$space_xl 60px g.$space_xl g.$space_xl;
@@ -36,7 +36,6 @@
 		align-items: center;
 		gap: g.$space_xl;
 		flex: 1 1 auto;
-		border-bottom: 1px solid g.$color_borderSub;
 		font-size: g.$font-size_l;
 		font-weight: 700;
 		@include g.mq() {
@@ -68,6 +67,8 @@
 		gap: g.$space_xl;
 		padding: g.$space_xl;
 		background-color: g.$color-bgSub;
+		border-top: 1px solid #ccc;
+		border-radius: 0 0 g.$space_m g.$space_m;
 		@include g.mq() {
 			padding: g.$space_l g.$space_3l g.$space_l g.$space_l;
 			gap: g.$space_l;
