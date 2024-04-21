@@ -38,12 +38,8 @@ class WithdrawalController extends Controller
                     Log::info('証明写真をアップロードしているので、削除します。');
                     Log::info('画像パス：' . $profile->id_photo);
 
-                    Storage::disk('s3')->delete('/job20/' . $profile->id_photo);
-                    $imageDeleteFlg = !(Storage::disk('s3')->exists('job20/' . $profile->id_photo));
-
-                    // deleteメソッドが使える場合
-                    // Storage::disk('s3')->delete('/job_change_20/' . $profile->id_photo);
-                    // $imageDeleteFlg = !(Storage::disk('s3')->exists('job_change_20/' . $profile->id_photo));
+                    Storage::disk('s3')->delete('/job_change_20/' . $profile->id_photo);
+                    $imageDeleteFlg = !(Storage::disk('s3')->exists('job_change_20/' . $profile->id_photo));
 
                     if($imageDeleteFlg){
                         Log::info('証明写真の削除成功。結果：' . $imageDeleteFlg);

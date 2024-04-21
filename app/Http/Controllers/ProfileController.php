@@ -90,12 +90,8 @@ class ProfileController extends Controller
                         Log::info('古い画像があるので削除します。');
             
                         // 古い画像を削除して確認(delete,existはディレクトリも指定する)
-                        Storage::disk('s3')->delete('/job20/' . $idPhotoPath);
-                        $deleteExists = !(Storage::disk('s3')->exists('job20/' . $idPhotoPath));
-            
-                        // deleteメソッドが使える場合
-                        // Storage::disk('s3')->delete('/job_change_20/' . $idPhotoPath);
-                        // $deleteExists = !(Storage::disk('s3')->exists('job_change_20/' . $idPhotoPath));
+                        Storage::disk('s3')->delete('/job_change_20/' . $idPhotoPath);
+                        $deleteExists = !(Storage::disk('s3')->exists('job_change_20/' . $idPhotoPath));
 
                         if($deleteExists){
                             Log::info('古い画像削除結果：' . $deleteExists);
