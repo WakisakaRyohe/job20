@@ -119,7 +119,7 @@ export default {
 				this.isDisableClick = false;
 			}, 400);
 
-			// this.resetInterval();
+			this.resetInterval();
 		},
 
 		//左に動く処理
@@ -144,7 +144,7 @@ export default {
 				this.isDisableClick = false;
 			}, 400);
 
-			// this.resetInterval();
+			this.resetInterval();
 		},
 
 		// ページャーのクリック
@@ -157,7 +157,7 @@ export default {
 				this.isDisableClick = false;
 			}, 400);
 
-			// this.resetInterval();
+			this.resetInterval();
 		},
 
 		resetInterval(){

@@ -1259,35 +1259,37 @@ class JobsTableSeeder extends Seeder
         $companyStartNum = array_shift($companyIds);
         $companyrEndNum = end($companyIds);
 
-        for($i = 1 ; $i <= 10 ; $i++) {
-            foreach($jobs as $key => $val){
-                DB::table('jobs')->insert([
-                    'job_name' => $val['job_name'],
-                    'job_catch' => $val['job_catch'],
-                    "photo1" => 'thumbnail' . $i . '.jpg',
-                    "photo2" => 'thumbnail' . ($i+1) . '.jpg',
-                    "photo3" => 'thumbnail' . ($i+2) . '.jpg',
-                    'job_summary' => $val['job_summary'],
-                    'job_description' => $val['job_description'],
-                    'application_conditions' => $val['application_conditions'],
-                    'work_location' => $val['work_location'],
-                    'working_hours' => $val['working_hours'],
-                    'annual_income' => $faker->numberBetween(2000000, 11000000),
-                    'salary' => $val['salary'],
-                    'holiday' => $val['holiday'],
-                    'welfare' => $val['welfare'],
-                    'selection' => $val['selection'],
-                    'company_id' => $faker->numberBetween($companyStartNum, $companyrEndNum),
-                    'industry_id' => $faker->numberBetween(1, 12),
-                    'occupation_id' => $faker->numberBetween(1, 14),
-                    'employment_status_id' => $faker->numberBetween(1, 5),
-                    'prefecture_id' => $faker->numberBetween(1, 47),
-                    'commitments' => $val['commitments'],
-                    'pickupFlg' => $faker->numberBetween(0,1),
-                    'deadline' => $faker->dateTimeBetween($startDate = '+1 week', $endDate = '+2 week'),
-                    'created_at' => $faker->dateTimeBetween($startDate = 'now', $endDate = '+1 hour'),
-                    'updated_at' => $faker->dateTimeBetween($startDate = '+1 hour', $endDate = '+1 day'),
-                ]);
+        for($j = 1 ; $j <= 10 ; $j++) {
+            for($i = 1 ; $i <= 10 ; $i++) {
+                foreach($jobs as $key => $val){
+                    DB::table('jobs')->insert([
+                        'job_name' => $val['job_name'],
+                        'job_catch' => $val['job_catch'],
+                        "photo1" => 'thumbnail' . $i . '.jpg',
+                        "photo2" => 'thumbnail' . ($i+1) . '.jpg',
+                        "photo3" => 'thumbnail' . ($i+2) . '.jpg',
+                        'job_summary' => $val['job_summary'],
+                        'job_description' => $val['job_description'],
+                        'application_conditions' => $val['application_conditions'],
+                        'work_location' => $val['work_location'],
+                        'working_hours' => $val['working_hours'],
+                        'annual_income' => $faker->numberBetween(2000000, 11000000),
+                        'salary' => $val['salary'],
+                        'holiday' => $val['holiday'],
+                        'welfare' => $val['welfare'],
+                        'selection' => $val['selection'],
+                        'company_id' => $faker->numberBetween($companyStartNum, $companyrEndNum),
+                        'industry_id' => $faker->numberBetween(1, 12),
+                        'occupation_id' => $faker->numberBetween(1, 14),
+                        'employment_status_id' => $faker->numberBetween(1, 5),
+                        'prefecture_id' => $faker->numberBetween(1, 47),
+                        'commitments' => $val['commitments'],
+                        'pickupFlg' => $faker->numberBetween(0,1),
+                        'deadline' => $faker->dateTimeBetween($startDate = '+1 week', $endDate = '+2 week'),
+                        'created_at' => $faker->dateTimeBetween($startDate = 'now', $endDate = '+1 hour'),
+                        'updated_at' => $faker->dateTimeBetween($startDate = '+1 hour', $endDate = '+1 day'),
+                    ]);
+                }
             }
         }
     }

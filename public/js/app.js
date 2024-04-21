@@ -2148,8 +2148,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.isResetSlide = false;
         _this.isDisableClick = false;
       }, 400);
-
-      // this.resetInterval();
+      this.resetInterval();
     },
     //左に動く処理
     prev: function prev() {
@@ -2170,8 +2169,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.isResetSlide = false;
         _this2.isDisableClick = false;
       }, 400);
-
-      // this.resetInterval();
+      this.resetInterval();
     },
     // ページャーのクリック
     move: function move(num) {
@@ -2182,8 +2180,7 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         _this3.isDisableClick = false;
       }, 400);
-
-      // this.resetInterval();
+      this.resetInterval();
     },
     resetInterval: function resetInterval() {
       // ５秒ごとにスライドするイベント削除して再開
@@ -92095,7 +92092,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var state = {
-  email: 'mitsuru28@yahoo.co.jp'
+  email: 'ynakajima@yahoo.co.jp'
   // 公開時の変更
   // email: '',
 };
