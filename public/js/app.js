@@ -2253,7 +2253,7 @@ __webpack_require__.r(__webpack_exports__);
     this.jobArray = last2Jobs.concat(copyArray, head2Jobs);
 
     // ５秒ごとにスライド
-    // this.timerId = setInterval(this.next, 5000);
+    this.timerId = setInterval(this.next, 5000);
 
     // 画面幅を取得するイベントを設定
     window.addEventListener('resize', this.handleResize);
